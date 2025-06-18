@@ -69,13 +69,18 @@ main {
     font-weight: bold;
 }
 
-.error {
-  color: black;
-  font-size: 0.85em;
-  font-family: Arial;
-  min-height: 1em;      /* keeps form steady */    
+tr.form td:first-child {
+  vertical-align: top;
+  padding-top: 6px; /* optional tweak to better align label with input */
 }
 
+.error {
+  display: block;
+  color: red;
+  font-size: 0.85em;
+  margin-top: 2px;
+  min-height: 1em;
+}
 
 
 
