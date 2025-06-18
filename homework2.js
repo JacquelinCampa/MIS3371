@@ -8,7 +8,9 @@ Description: homework 2 JavaScript to Redisplay/validate patient data from a for
 */
 
 // JS for dynamic date 
-document.getElementById("today").innerHTML = new Date().toLocaleDateString();
+window.onload = function() {
+  document.getElementById("today").innerHTML = new Date().toLocaleDateString();
+};
 
 // Clears the displayed patient data to start form again
 function removedata1() {
