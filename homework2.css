@@ -69,13 +69,18 @@ main {
     font-weight: bold;
 }
 
-.error {
-  display: block;
-  color: red;
-  font-size: 0.9em;
-  min-height: 1.2em; /* reserves space to avoid layout shift */
-  margin-top: 2px;
+.input-wrap {
+  display: flex;
+  flex-direction: column;
 }
+
+.error {
+  color: red;
+  font-size: 0.85em;
+  min-height: 1em;      /* keeps form steady */
+  margin-top: 2px;      /* subtle space */
+}
+
 
 
 
