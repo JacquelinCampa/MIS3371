@@ -297,9 +297,7 @@ function validateCity() {
     document.getElementById("city_message").innerHTML = "Invalid. Only letters, spaces, apostrophes, or hyphens.";
     error_flag = 1;
   }
-  else {
     document.getElementById("city_message").innerHTML = "";
-  }
 }
 
 // validates zip code field
