@@ -68,3 +68,7 @@ main {
 #copyrightclinicname {
     font-weight: bold;
 }
+
+.error {
+   display: block;
+}
