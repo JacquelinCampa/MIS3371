@@ -141,7 +141,7 @@ function validateSSN() {
 
   if (!ssnR.test(ssn)) {
     document.getElementById("SSN_message").innerHTML = 
-    "invalid. SSN must be 9 digits";
+    "Invalid. SSN must be 9 digits";
     return false;
   } 
   else {
