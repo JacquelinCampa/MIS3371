@@ -166,7 +166,9 @@ Description: Parsing/validating patient data in a form.
                 name="gender"
                 value="Male"
                 required
-                title="Required. Please choose one."
+                title="Required field. Please choose one."
+                onvalid="this.setCustomValidity('Required field. Please choose one.')"
+                oninput="this.setCustomValidity('')"
             >
             <label for="g1">Male</label>
 
@@ -175,6 +177,7 @@ Description: Parsing/validating patient data in a form.
                 id="g2"
                 name="gender"
                 value="Female"
+                title="Required field. Please choose one."
             >
             <label for="g2">Female</label>
 
@@ -183,6 +186,7 @@ Description: Parsing/validating patient data in a form.
                 id="g3"
                 name="gender"
                 value="Other"
+                title="Required field. Please choose one."
             >
             <label for="g3">Other</label>
         <span id="gender_message"></td>
