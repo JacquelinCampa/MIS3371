@@ -77,5 +77,13 @@ main {
   min-height: 1em;
 }
 
+tr.form td[id^="password_msg"] {
+  display: block;
+  color: black;
+  font-family: Cambria;
+  font-size: 0.85em;
+  min-height: 1em
+}
+
 
 
