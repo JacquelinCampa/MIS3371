@@ -70,5 +70,6 @@ main {
 }
 
 .error {
-   display: block;
+  margin-left: 10px;
+  min-width: 160px; 
 }
