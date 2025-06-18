@@ -78,7 +78,7 @@ main {
   color: red;
   font-size: 0.85em;
   min-height: 1em;      /* keeps form steady */
-  margin-top: 2px;      /* subtle space */
+  margin-top: 1px;      /* subtle space */
 }
 
 
