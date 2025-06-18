@@ -72,17 +72,17 @@ main {
 .error {
   display: block;
   color: black;
-  font-size: 0.85em;
+  font-size: 0.90em;
   font-family: cambria;
-  min-height: 1em;
+  min-height: .50em;
 }
 
 tr.form td[id^="password_msg"] {
   display: block;
   color: black;
   font-family: Cambria;
-  font-size: 0.85em;
-  min-height: 1em
+  font-size: 0.90em;
+  min-height: .50em
 }
 
 
