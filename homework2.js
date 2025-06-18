@@ -354,6 +354,10 @@ function validatePhone() {
     phone_message.innerHTML = "Invalid. Please enter a 10 digit phone number.";
     return false;
   }
+    if (digits.charAt(0) === '1') {
+    phone_message.innerHTML = "Phone number cannot start with 1.";
+    return false;
+  }
   phone.value = digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
   phone_message.innerHTML = "";
   return true;
