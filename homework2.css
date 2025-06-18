@@ -70,5 +70,10 @@ main {
 }
 
 .error {
-  display: block; 
+  display: inline; 
+  color: red;
+  margin-left: 10px;
+  font-size: 0.9em;
 }
+
+
