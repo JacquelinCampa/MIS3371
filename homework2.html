@@ -96,7 +96,7 @@ Description: Parsing/validating patient data in a form.
     <!-- last name -->
     <tr class="form">
         <td align="right">
-            <label for="lastname"><strong>First Name:</strong></label>
+            <label for="lastname"><strong>Last Name:</strong></label>
         </td>
         <td>
             <input 
@@ -117,7 +117,7 @@ Description: Parsing/validating patient data in a form.
     <!-- DOB -->
     <tr class="form">
         <td align="right">
-            <label for="dateofbirth">Date of Birth:</label>
+            <label for="dateofbirth"><strong>Date of Birth:</strong></label>
         </td>
         <td>
             <input 
@@ -131,7 +131,7 @@ Description: Parsing/validating patient data in a form.
         <span id="dateofbirth_message" class="error"></span></td>  
     <!-- SSN -->
         <td align="right">
-            <label for="SSN">Social Security Number:</label>
+            <label for="SSN"><strong>Social Security Number:<strong></label>
         </td>
         <td>
             <input 
@@ -182,7 +182,7 @@ Description: Parsing/validating patient data in a form.
     <!-- user ID -->
     <tr class="form">
         <td align="right">
-            <label for="userid">Desired User ID:</label>
+            <label for="userid"><strong>Desired User ID:</strong></label>
         </td>
         <td>
             <input
@@ -205,7 +205,7 @@ Description: Parsing/validating patient data in a form.
     <!-- password -->
     <tr class="form">
         <td align="right">
-            <label for="password">Password:</label>
+            <label for="password"><strong>Paswword:</strong></label>
         </td>
         <td>
             <input
@@ -228,7 +228,7 @@ Description: Parsing/validating patient data in a form.
     <!-- confirm password -->
     <tr class="form">
         <td align="right">
-            <label for="conpassword">Confirm Password:</label>
+            <label for="conpassword"><strong>Confirm Password:</strong></label>
         </td>
         <td>
             <input
@@ -271,7 +271,7 @@ Description: Parsing/validating patient data in a form.
     <!-- address 1 -->
     <tr class="form">
         <td align="right">
-            <label for="address1">Address Line 1:</label>
+            <label for="address1"><strong>Address Line 1:</strong></label>
         </td>
         <td>
             <input
@@ -308,9 +308,9 @@ Description: Parsing/validating patient data in a form.
     <!-- city, state, & zipcode -->
     <tr class="form">
         <td align="right">
-            <label for="city">City,</label>
-            <label for="state">State,</label>
-            <label for="zipcode">Zip Code:</label>    
+            <label for="city"><strong>City,</strong></label>
+            <label for="state"><strong>State,</strong></label>
+            <label for="zipcode"><strong>Zip Code:</strong></label> 
         </td>
         <td>
             <input
@@ -404,7 +404,7 @@ Description: Parsing/validating patient data in a form.
     <!-- email address -->
     <tr class="form">
         <td align="right">
-            <label for="emailaddress">Email Address:</label>
+            <label for="emailaddress"><strong>Email Address:</strong></label>
         </td>
         <td>
             <input 
@@ -417,7 +417,7 @@ Description: Parsing/validating patient data in a form.
                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
                    required
                    onblur="validateEmail()"
-                   oninvalid="this.setCustomValidity('e-Mail not valid.')"
+                   oninvalid="this.setCustomValidity('E-mail not valid.')"
                    oninput="this.setCustomValidity('')"
             >
          <span id="email_message" class="error"></span></td> 
@@ -425,7 +425,7 @@ Description: Parsing/validating patient data in a form.
     <!-- phone number -->
     <tr class="form">
         <td align="right">
-            <label for="phone">Phone Number:</label>
+            <label for="phone"><strong>Phone Number:</strong></label>
         </td>
         <td>
             <input 
@@ -444,7 +444,7 @@ Description: Parsing/validating patient data in a form.
     <!-- insurance question -->
     <tr class="form">
         <td align="right">
-            <label for="insurance">Do you have insurance:</label>
+            <label for="insurance"><strong>Do you have insurance:</strong></label>
         </td>
         <td colspan="2">
             <input 
@@ -468,7 +468,7 @@ Description: Parsing/validating patient data in a form.
     <!-- vaccination question -->
     <tr class="form">
         <td align="right">
-            <label for="vaccination">Are you vaccinated:</label>
+            <label for="vaccination"><strong>Are you vaccinated:</strong></label>
         </td>
         <td colspan="2">
             <input 
