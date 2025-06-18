@@ -95,7 +95,7 @@ function validateMiddleInit() {
 function validateLastName () {
   x = document.getElementById("lastname").value;
   if( x.length<1) { 
-    document.getElementById("lastname_message").innerHTML = "Invalid name. Last name must be 1-30 characters.";
+    document.getElementById("lastname_message").innerHTML = "Invalid. Last name must be 1-30 characters.";
     error_flag = 1;  
     }
   else {
@@ -141,7 +141,7 @@ function validateSSN() {
 
   if (!ssnR.test(ssn)) {
     document.getElementById("SSN_message").innerHTML = 
-    "Please enter a valid SSN. Must be 9 digits";
+    "invalid. SSN must be 9 digits";
     return false;
   } 
   else {
@@ -294,7 +294,7 @@ function validateCity() {
     document.getElementById("city_message").innerHTML = "";  
   }
   else  {
-    document.getElementById("city_message").innerHTML = "Invalid. City name must contain only letters, spaces, apostrophes, or hyphens.";
+    document.getElementById("city_message").innerHTML = "Invalid. Only letters, spaces, apostrophes, or hyphens.";
     error_flag = 1;
   }
 }
@@ -331,7 +331,7 @@ function validateEmail() {
     return false;
   }
   else if (!email.match(emailPattern)) {
-    email_message.innerHTML = "Invalid. Please enter a valid email address.";
+    email_message.innerHTML = "Invalid. Enter a valid email address.";
     return false;
   } 
   else {
@@ -351,7 +351,7 @@ function validatePhone() {
     return false;
   }
   if (digits.length !== 10) {
-    phone_message.innerHTML = "Invalid. Please enter a 10 digit phone number.";
+    phone_message.innerHTML = "Invalid. Enter a 10 digit phone number.";
     return false;
   }
     if (digits.charAt(0) === '1') {
