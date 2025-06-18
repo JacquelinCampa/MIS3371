@@ -128,7 +128,7 @@ Description: Parsing/validating patient data in a form.
                placeholder="MM/DD/YYYY"
                onblur="validateDateOfBirth()"
             >
-        <span id="dateofbirth_message"></span></td>
+        <span id="dateofbirth_message" class="error"></span></td>  
     <!-- SSN -->
         <td align="right">
             <label for="SSN">Social Security Number:</label>
@@ -145,7 +145,7 @@ Description: Parsing/validating patient data in a form.
                title="Numbers only"
                onblur="validateSSN()"
             >
-        <span id="SSN_message"></span></td>
+        <span id="SSN_message" class="error"></span></td>  
     </tr>
     <!-- gender -->
     <tr class="form">
@@ -200,7 +200,7 @@ Description: Parsing/validating patient data in a form.
                 placeholder="Your user ID"
                 onblur="validateUserID()"
             >
-        <span id="userid_message"></span></td>
+        <span id="userid_message" class="error"></span></td>  
     </tr>
     <!-- password -->
     <tr class="form">
@@ -223,7 +223,7 @@ Description: Parsing/validating patient data in a form.
                 oninput="validatePassword()"
                 onfocus="validatePassword()"
             >
-        <span id="password_message"></span></td>
+        <span id="password_message" class="error"></span></td>  
     </tr>
     <!-- confirm password -->
     <tr class="form">
@@ -246,7 +246,7 @@ Description: Parsing/validating patient data in a form.
                 oninput="conPassword()"
                 onfocus="conPassword()"
             >
-        <span id="conpassword_message"></span></td>
+        <span id="conpassword_message" class="error"></span></td>  
     </tr>
     <!-- password messages -->   
     <tr class="form">
@@ -287,7 +287,7 @@ Description: Parsing/validating patient data in a form.
                 oninput="this.setCustomValidity('')"
                 placeholder="1234 Main St (req'd)"
             >
-        <span id="address1_message"></span></td>
+        <span id="address1_message" class="error"></span></td>  
     <!-- address 2 -->
         <td align="right">
            <label for="address2">Address Line 2:</label>
@@ -303,7 +303,7 @@ Description: Parsing/validating patient data in a form.
               onblur="validateAddress2()"
               placeholder="Apt #, etc..."
            >
-        <span id="address2_message"></td>
+        <span id="address2_message" class="error"></span></td>  
     </tr>
     <!-- city, state, & zipcode -->
     <tr class="form">
@@ -396,7 +396,9 @@ Description: Parsing/validating patient data in a form.
                 onblur="validateZipCode()"
                 placeholder="00000"
             >
-            <span id="city_message"></span><span id="state_message"></span><span id="zipcode_message"></span>
+            <span id="city_message" class="error"></span>
+            <span id="state_message" class="error"></span>
+            <span id="zipcode_message" class="error"></span>
         </td>
     </tr>
     <!-- email address -->
@@ -418,7 +420,7 @@ Description: Parsing/validating patient data in a form.
                    oninvalid="this.setCustomValidity('e-Mail not valid.')"
                    oninput="this.setCustomValidity('')"
             >
-         <span id="email_message"></td>
+         <span id="email_message" class="error"></span></td> 
     </tr>
     <!-- phone number -->
     <tr class="form">
@@ -437,7 +439,7 @@ Description: Parsing/validating patient data in a form.
                    required
                    onblur="validatePhone()"
             >
-         <span id="phone_message"></span></td>
+         <span id="phone_message" class="error"></span></td> 
     </tr>
     <!-- insurance question -->
     <tr class="form">
@@ -570,7 +572,7 @@ Description: Parsing/validating patient data in a form.
             name="notes"
             rows="3"
             cols="50"
-            placeholder="Enter any additional medical history or concerns here..."></textarea>
+            placeholder="(Optional) Enter any additional medical history or concerns here..."></textarea>
         </td>
     </tr>
     <!-- submit & reset buttons -->
