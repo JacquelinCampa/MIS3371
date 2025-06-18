@@ -70,10 +70,12 @@ main {
 }
 
 .error {
-  display: inline; 
+  display: block;
   color: red;
-  margin-left: 10px;
   font-size: 0.9em;
+  min-height: 1.2em; /* reserves space to avoid layout shift */
+  margin-top: 2px;
 }
+
 
 
