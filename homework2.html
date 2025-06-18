@@ -63,9 +63,9 @@ Description: Parsing/validating patient data in a form.
                    minlength="1"
                    maxlength="30"
                    required
-                   title="Minimum 1 character; only letters, apostrophes, and dashes only"
-                   pattern="[a-zA-Z']{1,30}"
-                   oninvalid="this.setCustomValidity('First Name not valid.')"
+                   title="Required. 1-30 characters; only letters, apostrophes, and dashes allowed."
+                   pattern="[a-zA-Z'-]{1,30}"
+                   oninvalid="this.setCustomValidity('Required. 1-30 characters; only letters, apostrophes, and dashes allowed.')"
                    oninput="this.setCustomValidity('')"
                    onblur="validateFirstName()"
                    placeholder="(req'd)"
@@ -84,9 +84,9 @@ Description: Parsing/validating patient data in a form.
                    name="middleinit"
                    id="middleinit"
                    maxlength="1"
-                   title="Letters only"
+                   title="Optional. Only one letter allowed."
                    pattern="[a-zA-Z']{0,1}"
-                   oninvalid="this.setCustomValidity('Letters only please.')"
+                   oninvalid="this.setCustomValidity('If provided, middle initial must be one letter.')"
                    oninput="this.setCustomValidity('')"
                    onblur="validateMiddleInit()"
                    placeholder="I"
@@ -104,10 +104,12 @@ Description: Parsing/validating patient data in a form.
                    size="30"
                    name="lastname"
                    id="lastname"
+                   minlength="1"
                    maxlength="30"
                    pattern="[a-zA-Z2-5'\-]{1,30}"
+                   title="Required. 1-30 characters; only letters, apostrophes, numbers 2-5, and dashes allowed." 
                    required
-                   onvalid="this.setCustomValidity('Last Name is Required')"
+                   onvalid="this.setCustomValidity('Required. 1-30 characters; only letters, apostrophes, numbers 2-5, and dashes allowed.')"
                    oninput="this.setCustomValidity('')"
                    onblur="validateLastName()"
                    placeholder="(req'd)"
@@ -124,8 +126,11 @@ Description: Parsing/validating patient data in a form.
                type="date" 
                id="dateofbirth" 
                name="dateofbirth" 
+               title="Required. DOB must not be in the future or 120 years ago"
                required 
                placeholder="MM/DD/YYYY"
+               onvalid="this.setCustomValidity('Required. DOB must not be in the future or 120 years ago.')"
+               oninput="this.setCustomValidity('')"
                onblur="validateDateOfBirth()"
             >
         <span id="dateofbirth_message" class="error"></span></td>  
@@ -142,7 +147,9 @@ Description: Parsing/validating patient data in a form.
                maxlength="11" 
                placeholder="XXX-XX-XXXX" 
                required
-               title="Numbers only"
+               title="Required. Only numbers allowed."
+               onvalid="this.setCustomValidity('Required. SSN must have 9 digits.')"
+               oninput="this.setCustomValidity('')"
                onblur="validateSSN()"
             >
         <span id="SSN_message" class="error"></span></td>  
@@ -159,6 +166,7 @@ Description: Parsing/validating patient data in a form.
                 name="gender"
                 value="Male"
                 required
+                title="Required. Please choose one."
             >
             <label for="g1">Male</label>
 
