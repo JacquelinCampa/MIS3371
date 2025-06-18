@@ -69,14 +69,9 @@ main {
     font-weight: bold;
 }
 
-tr.form td:first-child {
-  vertical-align: top;
-  padding-top: 6px; /* optional tweak to better align label with input */
-}
-
 .error {
   display: block;
-  color: red;
+  color: black;
   font-size: 0.85em;
   margin-top: 2px;
   min-height: 1em;
