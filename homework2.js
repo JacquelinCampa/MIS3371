@@ -11,7 +11,7 @@ Description: homework 2 JavaScript to Redisplay/validate patient data from a for
 document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
 // Clears the displayed patient data to start form again
-function removedata1() {https://github.com/JacquelinCampa/MIS3371/blob/main/homework2.js
+function removedata1() 
   document.getElementById("outputformdata").innerHTML = "(You started over.)";
 }
 
