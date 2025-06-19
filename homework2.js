@@ -7,6 +7,17 @@ Version: 1.0
 Description: homework 2 JavaScript to Redisplay/validate patient data from a form
 */
 
+// sets errors to 0
+function setup() {
+    var error_flag = 0;
+    console.log(error_flag);
+  }
+
+// starts form over 
+function removedata1() {
+  document.getElementById("outputformdata").innerHTML = "(you started over)";
+}
+
 // JS for dynamic date 
 document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
