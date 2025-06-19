@@ -82,17 +82,16 @@ function validateDateOfBirth() {
     document.getElementById("dateofbirth_message").innerHTML = 
     "Date cannot be in the future.";
     dob.value = "";
-    return false;
+    error_flag = 1;
   } 
   else if (date < new Date(maxDate)) {
     document.getElementById("dateofbirth_message").innerHTML = 
     "Date cannot be more than 120 years ago.";
     dob.value = "";
-    return false;
+    error_flag = 1;
   } 
   else {
     document.getElementById("dateofbirth_message").innerHTML = "";
-    return true;
   }
 }
 
@@ -104,11 +103,10 @@ function validateSSN() {
   if (!ssnR.test(ssn)) {
     document.getElementById("SSN_message").innerHTML = 
     "Invalid. SSN must be 9 digits";
-    return false;
+    error_flag = 1;
   } 
   else {
     document.getElementById("SSN_message").innerHTML = "";
-    return true;
   }
 }
 
@@ -120,34 +118,33 @@ function validateUserID() {
   if (uid.length == 0) {
     document.getElementById("userid_message").innerHTML = 
     "User ID cannot be blank.";
-    return false;
+    error_flag = 1;
   }
 
   if (!isNaN(uid.charAt(0))) {
     document.getElementById("userid_message").innerHTML = 
     "User ID cannot start with a number.";
-    return false;
+    error_flag = 1;
   }
 
   let regex = /^[a-zA-Z0-9_-]+$/;
   if (!regex.test(uid)) {
     document.getElementById("userid_message").innerHTML = 
     "User ID can only have letters, numbers, underscores, and dashes.";
-    return false;
+    error_flag = 1;
   }
   else if (uid.length < 5) {
     document.getElementById("userid_message").innerHTML = 
     "User ID must be at least 5 characters.";
-    return false;
+    error_flag = 1;
   } 
   else if (uid.length > 30) {
     document.getElementById("userid_message").innerHTML = 
     "User ID cannot exceed 30 characters.";
-    return false;
+    error_flag = 1;
   }
   else {
     document.getElementById("userid_message").innerHTML = "";
-    return true;
   }
 }
 
@@ -270,7 +267,7 @@ function validateZipCode() {
   if (!zip) {
     document.getElementById("zipcode_message").innerHTML = 
     "Zip code cannot be blank. Must be a minimum of 5 digits.";
-    return false;
+    error_flag = 1;
   }
   if (zip.length > 5) {
     zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
@@ -280,7 +277,6 @@ function validateZipCode() {
   }
   zipCodeInput.value = zip;
   document.getElementById("zipcode_message").innerHTML = "";
-  return true;
 }
 
 // validates email address field
@@ -291,15 +287,14 @@ function validateEmail() {
 
   if (email.trim() === "") {
     email_message.innerHTML = "Email address cannot be blank.";
-    return false;
+    error_flag = 1;
   }
   else if (!email.match(emailPattern)) {
     email_message.innerHTML = "Invalid. Enter a valid email address.";
-    return false;
+    error_flag = 1;
   } 
   else {
     email_message.innerHTML = "";
-    return true;
   }
 }
 
@@ -311,19 +306,18 @@ function validatePhone() {
 
   if (digits == '') {
     phone_message.innerHTML = "Phone number cannot be blank.";
-    return false;
+    error_flag = 1;
   }
   if (digits.length !== 10) {
     phone_message.innerHTML = "Invalid. Enter a 10 digit phone number.";
-    return false;
+    error_flag = 1;
   }
     if (digits.charAt(0) === '1') {
     phone_message.innerHTML = "Phone number cannot start with 1.";
-    return false;
+    error_flag = 1;
   }
   phone.value = digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
   phone_message.innerHTML = "";
-  return true;
 }
 
 // review form data
@@ -368,53 +362,27 @@ function showAlert() {
 }
 
 function validateInformation() {
-    let valid = true;
-
-    if (!validateFirstName()) {
-        valid = false;
+  error_flag = "0";
+  validateFirstName();
+  validateMiddleInit();
+  validateLastName();
+  validateDateOfBirth();
+  validateSSN();
+  validateUserID();
+  validatePassword();
+  validateConPassword();
+  validateAddress1();
+  validateAddress2();
+  validateCity();
+  validateZipCode();
+  validateEmail();
+  validatePhone();
+  console.log("Error flag: "+error_flag);
+    if (error_flag == "1") {
+      alert("Please fix the indicated errors!");
     }
-    if (!validateMiddleInit()) {
-        valid = false;
+    else {
+      document.getElementById("submit").disabled = false;
     }
-    if (!validateLastName()) {
-        valid = false;
-    }
-    if (!validateDateOfBirth()) {
-        valid = false;
-    }
-    if (!validateSSN()) {
-        valid = false;
-    }
-    if (!validateUserID()) {
-        valid = false;
-    }
-    if (!validatePassword()) {
-        valid = false;
-    }
-    if (!validateConPassword()) {
-        valid = false;
-    }
-    if (!validateAddress1()) {
-        valid = false;
-    }
-    if (!validateAddress2()) {
-        valid = false;
-    }
-    if (!validateCity()) {
-        valid = false;
-    }
-    if (!validateZipCode()) {
-        valid = false;
-    }
-    if (!validateEmail()) {
-        valid = false;
-    }
-    if (!validatePhone()) {
-        valid = false;
-    }
-     if (valid) {
-         document.getElementById("submit").disabled = false;
-     } else{
-        showAlert();
-     }
- }
+}
+       
