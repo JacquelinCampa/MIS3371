@@ -85,30 +85,20 @@ tr.form td[id^="password_msg"] {
   min-height: .50em
 }
 
-table.output, tr.output, td.output {
-  width: 70%;
-  opacity: 0.9;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color:green;
-  padding: 2px;
-  border-spacing: 2px;
-  color:rgb(222, 243, 245);
-}
-td.outputdata {
-  width: 70%;
-  opacity: 0.9;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color:white;
-  padding: 2px;
-  border-spacing: 2px;
-  color:black;
-}
-.textsize1 
-{
-    width:10px
-}
-.textsize5 
-{
-    width:40px
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: black;
 }
 
+td.output {
+    width: 500px;
+    background-color: pink;
+    padding: 10px;
+    border-spacing: 2px;
+}
