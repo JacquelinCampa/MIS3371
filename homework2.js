@@ -58,31 +58,6 @@ function reviewForm() {
    }
 }
 
-
-/*  
-  for (let i = 0; i < formcontent.length; i++) {
-    if (formcontent.elements[i].value !="") { 
-      switch (formcontent.elements[i].type) {
-        case "checkbox":
-          if (formcontent.elements[i].checked) {
-              formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>&#x2713;</td></tr>`;
-            }
-            break;
-        case "radio":
-          if (formcontent.elements[i].checked) {
-            formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
-          }
-          break;
-        default:
-            formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
-      }
-    }
-  }
-  formoutput += "</table>";
-  document.getElementById("outputformdata").innerHTML = formoutput;
-}
-*/
-
 // Displays the range slider value 
 var slider = document.getElementById("comfortrange");
 var output = document.getElementById("rangedisplay");
