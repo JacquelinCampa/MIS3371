@@ -12,11 +12,11 @@ document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
 // Clears the displayed patient data to start form again
 function removedata1() {
-  document.getElementById("outputFormData").innerHTML = "(You started over.)";
+  document.getElementById("outputformdata").innerHTML = "(You started over.)";
 }
 
 // Displays all form data in a new section 
-function getdata1() {
+function reviewInput() {
   var formcontents = document.getElementById("signup");
   var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
   for (i = 0; i < formcontents.length; i++) {
