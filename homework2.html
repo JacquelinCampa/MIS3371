@@ -126,7 +126,7 @@ Description: Parsing/validating patient data in a form.
                type="date" 
                id="dateofbirth" 
                name="dateofbirth" 
-               title="Required. DOB must not be in the future or 120 years ago"
+               title="Required. DOB must not be in the future or 120 years ago."
                required 
                placeholder="MM/DD/YYYY"
                onvalid="this.setCustomValidity('Required. DOB must not be in the future or 120 years ago.')"
@@ -167,8 +167,6 @@ Description: Parsing/validating patient data in a form.
                 value="Male"
                 required
                 title="Required field. Please choose one."
-                onvalid="this.setCustomValidity('Required field. Please choose one.')"
-                oninput="this.setCustomValidity('')"
             >
             <label for="g1">Male</label>
 
@@ -178,7 +176,6 @@ Description: Parsing/validating patient data in a form.
                 name="gender"
                 value="Female"
                 title="Required field. Please choose one."
-                onvalid="this.setCustomValidity('Required field. Please choose one.')"
             >
             <label for="g2">Female</label>
 
@@ -188,7 +185,6 @@ Description: Parsing/validating patient data in a form.
                 name="gender"
                 value="Other"
                 title="Required field. Please choose one."
-                onvalid="this.setCustomValidity('Required field. Please choose one.')"
             >
             <label for="g3">Other</label>
         <span id="gender_message"></td>
@@ -206,12 +202,12 @@ Description: Parsing/validating patient data in a form.
                 id="userid"
                 minlength="5"
                 maxlength="30"
-                pattern="[A-Za-z]+[A-Za-z0-9-_]{8,}"
+                pattern="^[A-Za-z_-][A-Za-z0-9_-]{4,29}$"
+                title="5-30 characters. Must start with a letter, underscore, or dash. No spaces or special symbols."
                 required
-                oninvalid="this.setCustomValidity('Invalid User ID. Enter letters, numbers, dash or underscores. 1st character must be not be a number.')"
+                oninvalid="this.setCustomValidity('Invalid User ID. Use 5-30 letters, numbers, underscores or dashes. No spaces.')"
                 oninput="this.setCustomValidity('')"
-                title="Minumum 5 characters; no spaces or 'special' characters."
-                placeholder="Your user ID"
+                placeholder="Required user ID"
                 onblur="validateUserID()"
             >
         <span id="userid_message" class="error"></span></td>  
@@ -231,8 +227,8 @@ Description: Parsing/validating patient data in a form.
                 maxlength="30"
                 pattern="^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$"
                 required
-                placeholder="Alphanumeric"
-                title="8-30 characters. Must include at least one uppercase letter, one lowercase letter, one number, and one special character"
+                placeholder="Required. 8-30 characters."
+                title="Required. 8-30 characters; Must include at least one uppercase letter, one lowercase letter, one digit, and one special character."
                 onblur="validatePassword()"
                 oninput="validatePassword()"
                 onfocus="validatePassword()"
@@ -255,7 +251,7 @@ Description: Parsing/validating patient data in a form.
                 pattern="^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$"
                 required
                 placeholder="Re-enter Password"
-                title="8-30 characters. Must include at least one uppercase letter, one lowercase letter, one number, and one special character"
+                title="8-30 characters. Must include at least one uppercase letter, one lowercase letter, one number, and one special character."
                 onblur="validateConPassword()"
                 oninput="conPassword()"
                 onfocus="conPassword()"
@@ -297,8 +293,9 @@ Description: Parsing/validating patient data in a form.
                 maxlength="30"
                 required
                 onblur="validateAddress1()"
-                oninvalid="this.setCustomValidity('Address line 1 is Required')"
+                oninvalid="this.setCustomValidity('Address line 1 is Required.')"
                 oninput="this.setCustomValidity('')"
+                title="Required. 2-30 characters allowed."
                 placeholder="1234 Main St (req'd)"
             >
         <span id="address1_message" class="error"></span></td>  
@@ -315,7 +312,10 @@ Description: Parsing/validating patient data in a form.
               minlength="2"
               maxlength="30"
               onblur="validateAddress2()"
-              placeholder="Apt #, etc..."
+              oninvalid="this.setCustomValidity('If provided, 2-30 characteres allowed.')"
+              oninput="this.setCustomValidity('')"
+              placeholder="Apt #, etc...(Optional)"
+              title="If provided, 2-30 characteres allowed."
            >
         <span id="address2_message" class="error"></span></td>  
     </tr>
@@ -336,8 +336,9 @@ Description: Parsing/validating patient data in a form.
                 name="city" 
                 required
                 onblur="validateCity()"
-                oninvalid="this.setCustomValidity('You forgot City')"
+                oninvalid="this.setCustomValidity('City is required.')"
                 oninput="this.setCustomValidity('')"
+                tite="City is required."
                 placeholder="(req'd)"
             >
             <select id="state" name="state" required>
@@ -404,8 +405,8 @@ Description: Parsing/validating patient data in a form.
                 name="zipcode" 
                 pattern="\d{5}(-\d{4})?$"
                 required
-                title="Numbers and a dash only"
-                oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required')"
+                title="Minimum of 5 digits, optional to have a dash followed by 4 digits."
+                oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code required, optional to have a dash followed by 4 digits.')"
                 oninput="this.setCustomValidity('')"
                 onblur="validateZipCode()"
                 placeholder="00000"
@@ -428,11 +429,12 @@ Description: Parsing/validating patient data in a form.
                    name="email"
                    id="email"
                    placeholder="johndoe@gmail.com"
-                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+                   pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,20}$"
                    required
                    onblur="validateEmail()"
                    oninvalid="this.setCustomValidity('E-mail not valid.')"
                    oninput="this.setCustomValidity('')"
+                   title="Email is required."
             >
          <span id="email_message" class="error"></span></td> 
     </tr>
@@ -447,11 +449,14 @@ Description: Parsing/validating patient data in a form.
                    size="30"
                    name="phone"
                    id="phone"
-                   maxlength="13"
+                   maxlength="12"
                    pattern="[2-9]{3}-[0-9]{3}-[0-9]{4}"
                    placeholder="(713)456-7891"
+                   title="Required. 10 digits minimum."
                    required
                    onblur="validatePhone()"
+                   oninvalid="this.setCustomValidity('Required. 10 digits minimum.')"
+                   oninput="this.setCustomValidity('')"
             >
          <span id="phone_message" class="error"></span></td> 
     </tr>
@@ -467,6 +472,7 @@ Description: Parsing/validating patient data in a form.
                 name="insurance"
                 value="Yes"
                 required
+                title="Required field. Please choose one."
             >
             <label for="I1">Yes</label>
 
@@ -475,6 +481,7 @@ Description: Parsing/validating patient data in a form.
                 id="noinsurance"
                 name="insurance"
                 value="No"
+                title="Required field. Please choose one."
             >
             <label for="I2">No</label>
         <span id="insurance_message"></td>
@@ -491,6 +498,7 @@ Description: Parsing/validating patient data in a form.
                 name="vaccination"
                 value="Yes"
                 required
+                title="Required field. Please choose one."
             >
             <label for="v1">Yes</label>
 
@@ -499,6 +507,7 @@ Description: Parsing/validating patient data in a form.
                 id="novaccination"
                 name="vaccination"
                 value="No"
+                title="Required field. Please choose one."
             >
             <label for="v2">No</label>
         <span id="vaccination_message"></td>
@@ -513,30 +522,35 @@ Description: Parsing/validating patient data in a form.
                 type="checkbox"
                 id=option1
                 name="symptoms"
-                value="fever/chills"> Fever/chills     
+                title="(Optional) check all that apply."
+                value="fever/chills"> Fever/chills
 
             <input
                 type="checkbox"
                 id=option2
                 name="symptoms"
+                title="(Optional) check all that apply."
                 value="coughorsorethroat"> Cough or Sore Throat
 
             <input
                 type="checkbox"
                 id=option3
                 name="symptoms"
+                title="(Optional) check all that apply."
                 value="chestpain"> Chest Pain
 
             <input
                 type="checkbox"
                 id=option4
                 name="symptoms"
+                title="(Optional) check all that apply."
                 value="Nausea"> Nausea
 
             <input
                 type="checkbox"
                 id=option5
                 name="symptoms"
+                title="(Optional) check all that apply."
                 value="Fatigue"> Fatigue
         </td>
     </tr>
@@ -554,6 +568,7 @@ Description: Parsing/validating patient data in a form.
                 id="comfortrange"
                 min="1"
                 max="10"
+                title="Optional"
                 step="1"
                 list="ticks"
                 value="1"
@@ -586,6 +601,7 @@ Description: Parsing/validating patient data in a form.
             name="notes"
             rows="3"
             cols="50"
+            title="Optional"
             placeholder="(Optional) Enter any additional medical history or concerns here..."></textarea>
         </td>
     </tr>
