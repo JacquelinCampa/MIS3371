@@ -611,10 +611,17 @@ Description: Parsing/validating patient data in a form.
         <td colspan="4">
             <center>
                 <input
+                   type="button"
+                   id="validate"
+                   value="Validate Data"
+                   onclick='validateData1()'
+                >
+               
+                <input
                     type="button"
                     name="review"
                     id="review"
-                    value="Review"
+                    value="Review Data"
                     onclick="reviewInput()"
                 >
 
@@ -631,14 +638,11 @@ Description: Parsing/validating patient data in a form.
             <br><br>
         </td>
     </tr>
-
-    <center>
-    <p id="showInput"></p>
-    </center>
-
 </table>
 </form>
     </div>
+<!-- show entered form data -->
+<p id="outputformdata"></p>    
     <hr>
 <!-- footer -->
 <div class="footer">
