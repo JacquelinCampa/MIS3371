@@ -17,38 +17,47 @@ function removedata1()
 
 // Displays all form data in a new section 
 function reviewForm() {
-  const formcontents = document.getElementById("signup");
-  let formoutput = "<table class='output'><tr><th>Dataname</th><th>Type</th><th>Value</th></tr>";
+  var formcontents = document.getElementById("signup");
+  var formoutput;
+  var datatype;
+  var i;
+  formoutput = "<table class='output'><th>Dataname</th><th>Type</th><th>Value</th>";
+  for (i = 0; i < formcontents.length; i++) {
+            console.log("item: "+i+" "+formcontents.elements[i].name+" = "+formcontents.elements[i].value);
+            if (formcontents.elements[i].value !="") {
+              datatype = formcontents.elements[i].type;
+              switch (datatype) {
+                case "checkbox":
+                  if (formcontents.elements[i].checked) {
+                    formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                    formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                    formoutput = formoutput +"<td class='outputdata'>Checked</td></tr>";
+                  }
+                  break;
+               case "radio":
+                    if (formcontents.elements[i].checked) {
+                      formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                      formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                      formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
+                    }
+                  break;
+                case "button": case "submit": case "reset":
+                  break;
+                default:
+                  formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                  formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                  formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
+                }
+        
 
-  for (let i = 0; i < formcontents.elements.length; i++) {
-    const el = formcontents.elements[i];
-    const type = el.type;
-
-    switch (type) {
-      case "checkbox":
-        if (el.checked) {
-          formoutput += `<tr><td align='right'>${el.name}</td><td>${type}</td><td>Checked</td></tr>`;
-        }
-        break;
-      case "radio":
-        if (el.checked) {
-          formoutput += `<tr><td align='right'>${el.name}</td><td>${type}</td><td>${el.value}</td></tr>`;
-        }
-        break;
-      case "button":
-      case "submit":
-      case "reset":
-        break;
-      default:
-        if (el.value.trim() !== "") {
-          formoutput += `<tr><td align='right'>${el.name}</td><td>${type}</td><td>${el.value}</td></tr>`;
-        }
-    }
   }
 
-  formoutput += "</table>";
-  document.getElementById("outputformdata").innerHTML = formoutput;
+   if (formoutput.length>0) { 
+      formoutput = formoutput + "</table>";
+      document.getElementById("outputformdata").innerHTML = formoutput;
+   }
 }
+
 
 
 // Displays the range slider value 
