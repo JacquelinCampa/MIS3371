@@ -91,6 +91,7 @@ td.output {
     width: 500px;
     background-color: white;
     padding: 10px;
+    font-family: Cambria;
     border-spacing: 2px;
     border-radius: 20px;
     color: black;
@@ -98,7 +99,8 @@ td.output {
 
 td.output {
     width: 500px;
-    background-color: pink;
+    background-color: black;
+    font-family: Cambria;
     padding: 10px;
     border-spacing: 2px;
 }
