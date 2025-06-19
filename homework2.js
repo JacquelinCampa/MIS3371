@@ -17,33 +17,28 @@ function removedata1() {
 
 // Displays all form data in a new section 
 function reviewForm() {
-  var formcontent = document.getElementById("signup");
-  var formoutput = "<table class='output'><th colspan = '3'> Review Your Form:</th>";
-  for (let i = 0; i < formcontent.length; i++) {
-    let element = formcontent.elements[i];
-    if (element.value !== "") {
-      switch (element.type) {
-        case "checkbox":
-          if (element.checked) {
-            formoutput += `<tr><td align='right'>${element.name}</td><td>&#x2713;</td></tr>`;
-          }
-          break;
-        case "radio":
-          if (element.checked) {
-            formoutput += `<tr><td align='right'>${element.name}</td><td>${element.value}</td></tr>`;
-          }
-          break;
-        case "button":
-        case "submit":
-        case "reset":
-          break;
-        default:
-          formoutput += `<tr><td align='right'>${element.name}</td><td>${element.value}</td></tr>`;
-      }
+    var formcontent = document.getElementById("signup");
+    var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
+    for (let i = 0; i < formcontent.length; i++) {
+        if (formcontent.elements[i].value !== "") {
+            switch (formcontent.elements[i].type) {
+                case "checkbox":
+                    if (formcontent.elements[i].checked) {
+                        formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>&#x2713;</td></tr>`;
+                    }
+                    break;
+                case "radio":
+                    if (formcontent.elements[i].checked) {
+                        formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
+                    }
+                    break;
+                default:
+                    formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
+            }
+        }
     }
-  }
-  formoutput += "</table>";
-  document.getElementById("outputformdata").innerHTML = formoutput;
+    formoutput += "</table>";
+    document.getElementById("outputformdata").innerHTML = formoutput;
 }
 
 
