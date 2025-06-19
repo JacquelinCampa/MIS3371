@@ -326,32 +326,33 @@ function validatePhone() {
   return true;
 }
 
-// Review input
+// review form data
 function reviewForm() {
-  const formcontent = document.getElementById("signup");
-  let formoutput = "<table class='output'><th colspan='3'>Review Your Information:</th>";
+  const form = document.getElementById("signup");
+  let formoutput = "<table class='output'><tr><th colspan='2'>Review Your Information:</th></tr>";
 
-  for (let i = 0; i < formcontent.length; i++) {
-    const el = formcontent.elements[i];
-    if (["button", "submit", "reset"].includes(el.type)) continue;
+  for (const el of form.elements) {
+    if (["button", "submit", "reset"].includes(el.type)) continue;  
 
-    if (el.value !== "") {
-      switch (el.type) {
-        case "checkbox":
-          if (el.checked) {
-            formoutput += `<tr><td align='right'>${el.name}:</td><td>&#x2713;</td></tr>`;
-          }
-          break;
-        case "radio":
-          if (el.checked) {
-            formoutput += `<tr><td align='right'>${el.name}:</td><td>${el.value}</td></tr>`;
-          }
-          break;
-        default:
-          formoutput += `<tr><td align='right'>${el.name}:</td><td>${el.value}</td></tr>`;
-      }
+    let label = el.name + ":";
+    let value;
+
+    if (el.type === "checkbox") {
+      if (!el.checked) continue;
+      value = "✓";
+    } else if (el.type === "radio") {
+      if (!el.checked) continue;
+      value = el.value;
+    } else {
+      value = el.value;
     }
+
+    formoutput += `<tr>
+      <td align="right">${label}</td>
+      <td>${value}</td>
+    </tr>`;
   }
+
   formoutput += "</table>";
   document.getElementById("outputformdata").innerHTML = formoutput;
 }
