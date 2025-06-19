@@ -11,33 +11,7 @@ Description: homework 2 JavaScript to Redisplay/validate patient data from a for
 document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
 function reviewForm() {
-  const form = document.getElementById("signup");
-  const outputDiv = document.getElementById("outputformdata");
-
-  let output = "<h2>Review Your Information</h2>";
-  output += "<table class='output-table'>";
-  output += "<tr><th>Field</th><th>Value</th></tr>";
-
-  for (let i = 0; i < form.elements.length; i++) {
-    const field = form.elements[i];
-    const type = field.type;
-    const name = field.name;
-    const value = field.value;
-
-    if (!name || type === "submit" || type === "reset" || type === "button") continue;
-
-    if ((type === "checkbox" || type === "radio") && !field.checked) continue;
-
-    const label = form.querySelector(`label[for=${field.id}]`);
-    const labelText = label ? label.innerText.replace(":", "") : name;
-
-    output += `<tr><td>${labelText}</td><td>${value}</td></tr>`;
-  }
-
-  output += "</table>";
-
-  outputDiv.innerHTML = output;
-  outputDiv.style.display = "block";
+  alert("Review Form clicked!");
 }
 
 
