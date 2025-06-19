@@ -43,7 +43,7 @@ Description: Parsing/validating patient data in a form.
     </div>
     <div id="body">
 <!-- start of form -->
-<form name="signup" id="signup" onreset="removedata1()" action="homework2-thanks.html">
+<form id="signup" name="signup" onreset="removedata1()" action="homework2-thanks.html">
    <center> 
    <table class="form">
     <tr class="form">
@@ -615,7 +615,7 @@ Description: Parsing/validating patient data in a form.
                     name="reviewForm"
                     id="reviewForm"
                     value="Review Form"
-                    onClick="reviewForm()"
+                    onclick="reviewForm()"
                 >
 
                 <input
@@ -635,9 +635,7 @@ Description: Parsing/validating patient data in a form.
 </form>
     </div>
 <!-- show entered form data -->
-<center>
-   <p id="outputformdata"></p>   
-</center>
+<div id="outputformdata"></div>
     <hr>
 <!-- footer -->
 <div class="footer">
@@ -667,8 +665,6 @@ Description: Parsing/validating patient data in a form.
     </table>
 </footer>
 </div>
-
-
 <!-- load external javascript -->
 <script src="homework2.js"></script>
 </body>
