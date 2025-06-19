@@ -17,18 +17,18 @@ function removedata1() {
 
 // Displays all form data in a new section 
 function reviewForm() {
-  var formcontents = document.getElementById("signup");
-  var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
-  for (i = 0; i < formcontents.length; i++) {
-    if (formcontents.elements[i].value !="") { 
+  var formcontent = document.getElementById("signup");
+  var formoutput = "<table class='output'><th colspan = '3'> Review Your Form:</th>";
+  for (i = 0; i < formcontent.length; i++) {
+    if (formcontent.elements[i].value !="") { 
       switch (formcontent.elements[i].type) {
         case "checkbox":
-          if (formcontents.elements[i].checked) {
+          if (formcontent.elements[i].checked) {
               formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>&#x2713;</td></tr>`;
             }
             break;
         case "radio":
-          if (formcontents.elements[i].checked) {
+          if (formcontent.elements[i].checked) {
             formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
           }
           break;
