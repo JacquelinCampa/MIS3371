@@ -612,20 +612,31 @@ Description: Parsing/validating patient data in a form.
     <tr>
         <td colspan="4">
             <center>
+               < input
+                  type="button"
+                  id="validate"
+                  value="Validate Form"
+                  onclick="validateInformation()""
+               >
+                  
                 <input
                     type="button"
+                    id="reviewForm"
                     value="Review Form"
                     onclick="reviewForm()"
                 >
 
                 <input
                     type="submit"
+                    value="Submit"
+                    id="Submit"
                     name="submit"
                 >
 
                 <input
                     type="reset"
                     name="reset"
+                    value="Reset"
                 >
             </center>
             <br><br>
