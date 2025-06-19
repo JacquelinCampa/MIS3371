@@ -1,6 +1,6 @@
 /*
 Author: Jacquelin Valdez Campa
-Program name: homework12.js
+Program name: homework2.js
 Date created: 06/16/25
 Date last edited: 
 Version: 1.0
