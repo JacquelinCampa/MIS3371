@@ -10,19 +10,6 @@ Description: homework 2 JavaScript to Redisplay/validate patient data from a for
 // JS for dynamic date 
 document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
-// Displays all form data in a new section 
-function reviewForm() {
-  alert("Review Form clicked!");
-}
-
-
-// Clears the displayed patient data to start form again
-/* function removedata1() {
-  document.getElementById("outputformdata").innerHTML = "(You started over.)";
-}
-*/
-
-
 // Displays the range slider value 
 var slider = document.getElementById("comfortrange");
 var output = document.getElementById("rangedisplay");
@@ -337,4 +324,33 @@ function validatePhone() {
   phone.value = digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
   phone_message.innerHTML = "";
   return true;
+}
+
+// Review input
+function reviewForm() {
+    const formcontent = document.getElementById("signup");
+    let formoutput = "<table class='output'><th colspan='3'> Review Your Information:</th>";
+
+    for (let i = 0; i < formcontent.length; i++) {
+        const el = formcontent.elements[i];
+        if (el.value !== "") {
+            switch (el.type) {
+                case "checkbox":
+                    if (el.checked) {
+                        formoutput += `<tr><td align='right'>${el.name}</td><td>&#x2713;</td></tr>`;
+                    }
+                    break;
+                case "radio":
+                    if (el.checked) {
+                        formoutput += `<tr><td align='right'>${el.name}</td><td>${el.value}</td></tr>`;
+                    }
+                    break;
+                default:
+                    formoutput += `<tr><td align='right'>${el.name}</td><td>${el.value}</td></tr>`;
+            }
+        }
+    }
+
+    formoutput += "</table>";
+    document.getElementById("outputformdata").innerHTML = formoutput;
 }
