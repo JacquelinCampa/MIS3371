@@ -21,32 +21,24 @@ function getdata1() {
   var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
   for (i = 0; i < formcontents.length; i++) {
     if (formcontents.elements[i].value !="") { 
-      switch (datatype) {
+      switch (formcontent.elements[i].type) {
         case "checkbox":
           if (formcontents.elements[i].checked) {
-              formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
-              formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
-              formoutput = formoutput +"<td class='outputdata'>Checked</td></tr>";
+              formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>&#x2713;</td></tr>`;
             }
             break;
         case "radio":
           if (formcontents.elements[i].checked) {
-              formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
-              formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
-              formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
-            }
-            break;
-        case "button": case "submit": case "reset":
+            formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
+          }
           break;
         default:
-          formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
-          formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
-          formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
-        }
+            formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
       }
     }
-    formoutput += "</table>";
-    document.getElementById("outputformdata").innerHTML = formoutput;
+  }
+  formoutput += "</table>";
+  document.getElementById("outputformdata").innerHTML = formoutput;
 }
 
 // Displays the range slider value 
