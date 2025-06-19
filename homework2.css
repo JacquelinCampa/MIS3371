@@ -85,5 +85,16 @@ tr.form td[id^="password_msg"] {
   min-height: .50em
 }
 
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: Pick a color;
+}
+
 
 
