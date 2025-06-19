@@ -367,46 +367,49 @@ function showAlert() {
     };
 }
 
-function validateEverything() {
+function validateInformation() {
     let valid = true;
 
-    if (!validateFname()) {
+    if (!validateFirstName()) {
         valid = false;
     }
-    if (!validateMini()) {
+    if (!validateMiddleInit()) {
         valid = false;
     }
-    if (!validateLname()) {
+    if (!validateLastName()) {
         valid = false;
     }
-    if (!validateDob()) {
+    if (!validateDateOfBirth()) {
         valid = false;
     }
-    if (!validateSsn()) {
+    if (!validateSSN()) {
+        valid = false;
+    }
+    if (!validateUserID()) {
+        valid = false;
+    }
+    if (!validatePassword()) {
+        valid = false;
+    }
+    if (!validateConPassword()) {
         valid = false;
     }
     if (!validateAddress1()) {
         valid = false;
     }
+    if (!validateAddress2()) {
+        valid = false;
+    }
     if (!validateCity()) {
         valid = false;
     }
-    if (!validateZcode()) {
+    if (!validateZipCode()) {
         valid = false;
     }
     if (!validateEmail()) {
         valid = false;
     }
     if (!validatePhone()) {
-        valid = false;
-    }
-    if (!validateUid()) {
-        valid = false;
-    }
-    if (!validatePword()) {
-        valid = false;
-    }
-    if (!confirmPword()) {
         valid = false;
     }
      if (valid) {
