@@ -147,7 +147,7 @@ Description: Parsing/validating patient data in a form.
                maxlength="11" 
                placeholder="XXX-XX-XXXX" 
                required
-               title="Required. Only numbers allowed."
+               title="9 digits required."
                onvalid="this.setCustomValidity('Required. SSN must have 9 digits.')"
                oninput="this.setCustomValidity('')"
                onblur="validateSSN()"
@@ -227,7 +227,7 @@ Description: Parsing/validating patient data in a form.
                 maxlength="30"
                 pattern="^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$"
                 required
-                placeholder="Required. 8-30 characters."
+                placeholder="8-30 characters required."
                 title="Required. 8-30 characters; Must include at least one uppercase letter, one lowercase letter, one digit, and one special character."
                 onblur="validatePassword()"
                 oninput="validatePassword()"
@@ -295,7 +295,7 @@ Description: Parsing/validating patient data in a form.
                 onblur="validateAddress1()"
                 oninvalid="this.setCustomValidity('Address line 1 is Required.')"
                 oninput="this.setCustomValidity('')"
-                title="Required. 2-30 characters allowed."
+                title="2-30 characters required."
                 placeholder="1234 Main St (req'd)"
             >
         <span id="address1_message" class="error"></span></td>  
@@ -341,7 +341,7 @@ Description: Parsing/validating patient data in a form.
                 tite="City is required."
                 placeholder="(req'd)"
             >
-            <select id="state" name="state" required>
+            <select id="state" name="state" required tite="State is required.">
                 <option selected disabled>Please Select One</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -452,7 +452,7 @@ Description: Parsing/validating patient data in a form.
                    maxlength="12"
                    pattern="[2-9]{3}-[0-9]{3}-[0-9]{4}"
                    placeholder="(713)456-7891"
-                   title="Required. 10 digits minimum."
+                   title="10 digits are required."
                    required
                    onblur="validatePhone()"
                    oninvalid="this.setCustomValidity('Required. 10 digits minimum.')"
