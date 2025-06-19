@@ -259,48 +259,45 @@ function validateAddress2() {
 }
 
 // validates city field
-function validateCity() {
-  var cityinput = document.getElementById("city").value.trim();
-  var cityoutput = "";
+function checkcity() {
+  var city = document.getElementById("city").value.trim();
 
-  if (cityinput === "") {
-    cityoutput = "City is required.";
+  if (city === "") {
+    document.getElementById("city_message").innerHTML = "City name cannot be empty.";
     error_flag = 1;
-  } else if (cityinput.length < 2 || cityinput.length > 30) {
-    cityoutput = "City must be between 2 and 30 characters.";
+  } else if (city.length < 2 || city.length > 30) {
+    document.getElementById("city_message").innerHTML = "City name must be between 2 and 30 characters.";
     error_flag = 1;
-  } else if (!cityinput.match(/^[a-zA-Z '-]+$/)) {
-    cityoutput = "Invalid. Only letters, spaces, apostrophes, or hyphens.";
+  } else if (!city.match(/^[a-zA-Z\s'-]+$/)) {
+    document.getElementById("city_message").innerHTML = "Invalid characters in City name.";
     error_flag = 1;
+  } else {
+    document.getElementById("city_message").innerHTML = "";
   }
-
-  document.getElementById("city_message").innerHTML = cityoutput;
 }
 
 // validates zip code field
 function validateZipCode() {
-  const zipCodeInput = document.getElementById("zipcode");
-  let zip = zipCodeInput.value.replace(/[^\d-]/g, "");
-  let zipoutput = "";
+  var zipCodeInput = document.getElementById("zipcode");
+  var zip = zipCodeInput.value.replace(/[^\d]/g, "").trim();
 
   if (zip === "") {
-    zipoutput = "Zip code cannot be blank. Must be a minimum of 5 digits.";
+    document.getElementById("zipcode_message").innerHTML = "Zip code cannot be blank. Must be a minimum of 5 digits.";
+    error_flag = 1;
+  } else if (zip.length < 5) {
+    document.getElementById("zipcode_message").innerHTML = "Zip code must be at least 5 digits.";
     error_flag = 1;
   } else {
-    if (zip.length < 5) {
-      zipoutput = "Zip code must be at least 5 digits.";
-      error_flag = 1;
+    if (zip.length > 5) {
+      zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
     } else {
-      if (zip.length > 5) {
-        zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
-      } else {
-        zip = zip.slice(0, 5);
-      }
-      zipCodeInput.value = zip;
+      zip = zip.slice(0, 5);
     }
+    zipCodeInput.value = zip;
+    document.getElementById("zipcode_message").innerHTML = ""; 
   }
-  document.getElementById("zipcode_message").innerHTML = zipoutput;
 }
+
 
 // validates email address field
 function validateEmail() {
