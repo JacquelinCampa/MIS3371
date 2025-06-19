@@ -342,7 +342,7 @@ Description: Parsing/validating patient data in a form.
                 placeholder="(req'd)"
             >
             <select id="state" name="state" required tite="State is required.">
-                <option selected disabled>Please Select One</option>
+                <option value=""></option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -606,14 +606,14 @@ Description: Parsing/validating patient data in a form.
         </td>
     </tr>
     <!-- submit & reset buttons -->
-    <tr><td colspan="4"><br><br></td></tr> 
+    <tr>
+       <td colspan="4"><br><br></td>
+    </tr> 
     <tr>
         <td colspan="4">
             <center>
                 <input
                     type="button"
-                    name="reviewForm"
-                    id="reviewForm"
                     value="Review Form"
                     onclick="reviewForm()"
                 >
@@ -631,11 +631,11 @@ Description: Parsing/validating patient data in a form.
             <br><br>
         </td>
     </tr>
+<!-- show review form data -->
+<div id="outputformdata"></div>
 </table>
 </form>
     </div>
-<!-- show entered form data -->
-<div id="outputformdata"></div>
     <hr>
 <!-- footer -->
 <div class="footer">
