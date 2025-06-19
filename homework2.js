@@ -328,29 +328,30 @@ function validatePhone() {
 
 // Review input
 function reviewForm() {
-    const formcontent = document.getElementById("signup");
-    let formoutput = "<table class='output'><th colspan='3'> Review Your Information:</th>";
+  const formcontent = document.getElementById("signup");
+  let formoutput = "<table class='output'><th colspan='3'>Review Your Information:</th>";
 
-    for (let i = 0; i < formcontent.length; i++) {
-        const el = formcontent.elements[i];
-        if (el.value !== "") {
-            switch (el.type) {
-                case "checkbox":
-                    if (el.checked) {
-                        formoutput += `<tr><td align='right'>${el.name}</td><td>&#x2713;</td></tr>`;
-                    }
-                    break;
-                case "radio":
-                    if (el.checked) {
-                        formoutput += `<tr><td align='right'>${el.name}</td><td>${el.value}</td></tr>`;
-                    }
-                    break;
-                default:
-                    formoutput += `<tr><td align='right'>${el.name}</td><td>${el.value}</td></tr>`;
-            }
-        }
+  for (let i = 0; i < formcontent.length; i++) {
+    const el = formcontent.elements[i];
+    if (["button", "submit", "reset"].includes(el.type)) continue;
+
+    if (el.value !== "") {
+      switch (el.type) {
+        case "checkbox":
+          if (el.checked) {
+            formoutput += `<tr><td align='right'>${el.name}:</td><td>&#x2713;</td></tr>`;
+          }
+          break;
+        case "radio":
+          if (el.checked) {
+            formoutput += `<tr><td align='right'>${el.name}:</td><td>${el.value}</td></tr>`;
+          }
+          break;
+        default:
+          formoutput += `<tr><td align='right'>${el.name}:</td><td>${el.value}</td></tr>`;
+      }
     }
-
-    formoutput += "</table>";
-    document.getElementById("outputformdata").innerHTML = formoutput;
+  }
+  formoutput += "</table>";
+  document.getElementById("outputformdata").innerHTML = formoutput;
 }
