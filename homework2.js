@@ -19,7 +19,38 @@ function removedata1() {
 function reviewForm() {
   var formcontent = document.getElementById("signup");
   var formoutput = "<table class='output'><th colspan = '3'> Review Your Form:</th>";
-  for (i = 0; i < formcontent.length; i++) {
+  for (let i = 0; i < formcontent.length; i++) {
+    let element = formcontent.elements[i];
+    if (element.value !== "") {
+      switch (element.type) {
+        case "checkbox":
+          if (element.checked) {
+            formoutput += `<tr><td align='right'>${element.name}</td><td>&#x2713;</td></tr>`;
+          }
+          break;
+        case "radio":
+          if (element.checked) {
+            formoutput += `<tr><td align='right'>${element.name}</td><td>${element.value}</td></tr>`;
+          }
+          break;
+        case "button":
+        case "submit":
+        case "reset":
+          break;
+        default:
+          formoutput += `<tr><td align='right'>${element.name}</td><td>${element.value}</td></tr>`;
+      }
+    }
+  }
+  formoutput += "</table>";
+  document.getElementById("outputformdata").innerHTML = formoutput;
+}
+
+
+
+
+/*  
+  for (let i = 0; i < formcontent.length; i++) {
     if (formcontent.elements[i].value !="") { 
       switch (formcontent.elements[i].type) {
         case "checkbox":
@@ -67,6 +98,7 @@ function validateFirstName() {
     }
   }
 }
+*/
 
 // Validates middle name field 
 function validateMiddleInit() {
