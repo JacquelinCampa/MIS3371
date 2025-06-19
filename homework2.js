@@ -12,9 +12,10 @@ document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
 
 // Clears the displayed patient data to start form again
-function removedata1() {
+/* function removedata1() {
   document.getElementById("outputformdata").innerHTML = "(You started over.)";
 }
+*/
 
 // Displays all form data in a new section 
 function reviewForm() {
@@ -56,9 +57,6 @@ function reviewForm() {
       document.getElementById("outputformdata").innerHTML = formoutput;
    }
 }
-
-
-
 
 // Displays the range slider value 
 var slider = document.getElementById("comfortrange");
