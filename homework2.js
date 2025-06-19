@@ -16,7 +16,7 @@ function removedata1() {
 }
 
 // Displays all form data in a new section 
-function reviewInput() {
+function reviewMyInformation() {
   var formcontents = document.getElementById("signup");
   var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
   for (i = 0; i < formcontents.length; i++) {
