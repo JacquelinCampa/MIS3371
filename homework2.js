@@ -11,35 +11,53 @@ Description: homework 2 JavaScript to Redisplay/validate patient data from a for
 document.getElementById("today").innerHTML = new Date().toLocaleDateString();
 
 // Clears the displayed patient data to start form again
-function removedata1() {
+function removedata1() {https://github.com/JacquelinCampa/MIS3371/blob/main/homework2.js
   document.getElementById("outputformdata").innerHTML = "(You started over.)";
 }
 
 // Displays all form data in a new section 
 function reviewForm() {
-    var formcontent = document.getElementById("signup");
-    var formoutput = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
-    for (let i = 0; i < formcontent.length; i++) {
-        if (formcontent.elements[i].value !== "") {
-            switch (formcontent.elements[i].type) {
+ var formcontents = document.getElementById("signup");
+ var formoutput;
+ var datatype;
+  var i;
+  formoutput = "<table class='output'><th>Dataname</th><th>Type</th><th>Value</th>";
+  for (i = 0; i < formcontents.length; i++) {
+            console.log("item: "+i+" "+formcontents.elements[i].name+" = "+formcontents.elements[i].value);
+            //if (formcontents.elements[i].value !="") {
+              datatype = formcontents.elements[i].type;
+              switch (datatype) {
                 case "checkbox":
-                    if (formcontent.elements[i].checked) {
-                        formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>&#x2713;</td></tr>`;
+                  if (formcontents.elements[i].checked) {
+                    formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                    formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                    formoutput = formoutput +"<td class='outputdata'>Checked</td></tr>";
+                  }
+                  break;
+               case "radio":
+                    if (formcontents.elements[i].checked) {
+                      formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                      formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                      formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
                     }
-                    break;
-                case "radio":
-                    if (formcontent.elements[i].checked) {
-                        formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
-                    }
-                    break;
+                  break;
+                case "button": case "submit": case "reset":
+                  break;
                 default:
-                    formoutput += `<tr><td align='right'>${formcontent.elements[i].name}</td><td>${formcontent.elements[i].value}</td></tr>`;
-            }
-        }
-    }
-    formoutput += "</table>";
-    document.getElementById("outputformdata").innerHTML = formoutput;
+                  formoutput = formoutput + "<tr><td align='right'>"+formcontents.elements[i].name+"</td>";
+                  formoutput = formoutput +"<td align='right'>"+ datatype + "</td>";
+                  formoutput = formoutput +"<td class='outputdata'>"+ formcontents.elements[i].value+"</td></tr>";
+                }
+        
+
+  }
+
+   if (formoutput.length>0) { 
+      formoutput = formoutput + "</table>";
+      document.getElementById("outputformdata").innerHTML = formoutput;
+   }
 }
+
 
 /*  
   for (let i = 0; i < formcontent.length; i++) {
