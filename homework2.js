@@ -356,3 +356,62 @@ function reviewForm() {
   formoutput += "</table>";
   document.getElementById("outputformdata").innerHTML = formoutput;
 }
+
+function showAlert() {
+    var alertBox = document.getElementById("alert-box");
+    var closeAlert = document.getElementById("close-alert");
+
+    alertBox.style.display = "block";
+    closeAlert.onclick = function() {
+        alertBox.style.display = "none";
+    };
+}
+
+function validateEverything() {
+    let valid = true;
+
+    if (!validateFname()) {
+        valid = false;
+    }
+    if (!validateMini()) {
+        valid = false;
+    }
+    if (!validateLname()) {
+        valid = false;
+    }
+    if (!validateDob()) {
+        valid = false;
+    }
+    if (!validateSsn()) {
+        valid = false;
+    }
+    if (!validateAddress1()) {
+        valid = false;
+    }
+    if (!validateCity()) {
+        valid = false;
+    }
+    if (!validateZcode()) {
+        valid = false;
+    }
+    if (!validateEmail()) {
+        valid = false;
+    }
+    if (!validatePhone()) {
+        valid = false;
+    }
+    if (!validateUid()) {
+        valid = false;
+    }
+    if (!validatePword()) {
+        valid = false;
+    }
+    if (!confirmPword()) {
+        valid = false;
+    }
+     if (valid) {
+         document.getElementById("submit").disabled = false;
+     } else{
+        showAlert();
+     }
+ }
