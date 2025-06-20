@@ -203,9 +203,9 @@ Description: Parsing/validating patient data in a form.
                 minlength="5"
                 maxlength="30"
                 pattern="^[A-Za-z_-][A-Za-z0-9_-]{4,29}$"
-                title="5-30 characters. Must start with a letter, underscore, or dash. No spaces or special symbols."
+                title="5-30 characters. Must start with a letter, underscore, or dash. Numbers allowed. No spaces or special symbols."
                 required
-                oninvalid="this.setCustomValidity('Invalid User ID. Use 5-30 letters, numbers, underscores or dashes. No spaces.')"
+                oninvalid="this.setCustomValidity('Invalid User ID. Must start with a letter, underscore, or dash. Numbers allowed. No spaces or special symbols.')"
                 oninput="this.setCustomValidity('')"
                 placeholder="Required user ID"
                 onblur="validateUserID()"
@@ -228,6 +228,8 @@ Description: Parsing/validating patient data in a form.
                 pattern="^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$"
                 required
                 placeholder="8-30 characters required."
+                oninvalid="this.setCustomValidity('Required. 8-30 characters; Must include at least one uppercase letter, one lowercase letter, one digit, and one special character.')"
+                oninput="this.setCustomValidity('')"
                 title="Required. 8-30 characters; Must include at least one uppercase letter, one lowercase letter, one digit, and one special character."
                 onblur="validatePassword()"
                 oninput="validatePassword()"
@@ -250,8 +252,10 @@ Description: Parsing/validating patient data in a form.
                 maxlength="30"
                 pattern="^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}$"
                 required
+                oninvalid="this.setCustomValidity('Required. Passwords have to match.')"
+                oninput="this.setCustomValidity('')"
                 placeholder="Re-enter Password"
-                title="8-30 characters. Must include at least one uppercase letter, one lowercase letter, one number, and one special character."
+                title="Required. Passwords have to match"
                 onblur="validateConPassword()"
                 oninput="conPassword()"
                 onfocus="conPassword()"
@@ -293,7 +297,7 @@ Description: Parsing/validating patient data in a form.
                 maxlength="30"
                 required
                 onblur="validateAddress1()"
-                oninvalid="this.setCustomValidity('Address line 1 is Required.')"
+                oninvalid="this.setCustomValidity('2-30 characters required.')"
                 oninput="this.setCustomValidity('')"
                 title="2-30 characters required."
                 placeholder="1234 Main St (req'd)"
@@ -341,7 +345,7 @@ Description: Parsing/validating patient data in a form.
                 oninput="this.setCustomValidity('')"
                 placeholder="(req'd)"
             >
-            <select id="state" name="state" required tite="State is required.">
+            <select id="state" name="state" required title="State is required." placeholder="Please select one>
                 <option value=""></option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -449,13 +453,14 @@ Description: Parsing/validating patient data in a form.
                    size="30"
                    name="phone"
                    id="phone"
+                   minlength="10"
                    maxlength="12"
                    pattern="[2-9]{3}-[0-9]{3}-[0-9]{4}"
                    placeholder="(713)456-7891"
                    title="10 digits are required."
                    required
                    onblur="validatePhone()"
-                   oninvalid="this.setCustomValidity('Required. 10 digits minimum.')"
+                   oninvalid="this.setCustomValidity('10 digits are required.')"
                    oninput="this.setCustomValidity('')"
             >
          <span id="phone_message" class="error"></span></td> 
