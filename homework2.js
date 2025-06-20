@@ -321,24 +321,27 @@ function validateEmail() {
 // validates phone number field
 function validatePhone() {
   const phone = document.getElementById("phone");
-  const phone_message = document.getElementById("phone_message");
   let digits = phone.value.replace(/\D/g, '');
 
-  if (digits == '') {
-    phone_message.innerHTML = "Phone number cannot be blank.";
+  if (digits === '') {
+    document.getElementById("phone_message").innerHTML = "Phone number cannot be blank.";
     error_flag = 1;
+    return; 
   }
   if (digits.length !== 10) {
-    phone_message.innerHTML = "Invalid. Enter a 10 digit phone number.";
+    document.getElementById("phone_message").innerHTML = "Invalid. Enter a 10 digit phone number.";
     error_flag = 1;
+    return;
   }
-    if (digits.charAt(0) === '1') {
-    phone_message.innerHTML = "Phone number cannot start with 1.";
+  if (digits.charAt(0) === '1') {
+    document.getElementById("phone_message").innerHTML = "Phone number cannot start with 1.";
     error_flag = 1;
+    return;
   }
   phone.value = digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-  phone_message.innerHTML = "";
+  document.getElementById("phone_message").innerHTML = ""; 
 }
+
 
 // review form data
 function reviewForm() {
