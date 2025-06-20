@@ -163,63 +163,50 @@ function validateUserID() {
 // Validates password requirements
 function validatePassword() {
   let uid = document.getElementById("userid").value;
-  var passwordoutput;
-  var passwordinput = document.getElementById("password").value;
-  console.log(passwordinput);
+  let passwordinput = document.getElementById("password").value;
+  let passwordoutput;
+  error_flag = 0;
 
-  // requires one digit in the password field
-  if(passwordinput.search(/[0-9]/)<0 ) {   
+  if (passwordinput === uid) {
+    passwordoutput = "Password cannot be the same as User ID.";
+    document.getElementById("password_msg6").innerHTML = passwordoutput;
+    error_flag = 1;
+  } else {
+    document.getElementById("password_msg6").innerHTML = "";
+  }
+  if (passwordinput.search(/[0-9]/) < 0) {
     passwordoutput = "Enter at least 1 digit.";
     error_flag = 1;
-  } 
-  else {
+  } else {
     passwordoutput = "Password has at least 1 number";
   }
   document.getElementById("password_msg1").innerHTML = passwordoutput;
-  // requires a special character in the password field
-   if(passwordinput.search(/[!\@#\$%&*\-_\\.+\(\)]/)<0 ) {   
+  if (passwordinput.search(/[!@#\$%&*\-_\\.+\(\)]/) < 0) {
     passwordoutput = "Enter at least 1 special character.";
     error_flag = 1;
-  }
-  else {
+  } else {
     passwordoutput = "Password has at least 1 special character.";
   }
   document.getElementById("password_msg2").innerHTML = passwordoutput;
-  // requires a minimum of 8 characters in the password field
-  if(passwordinput.length < 8) {
+  if (passwordinput.length < 8) {
     passwordoutput = "Enter a Minimum of 8 characters.";
     error_flag = 1;
-  } 
-  else {
+  } else {
     passwordoutput = "Password is now 8 or more characters.";
   }
   document.getElementById("password_msg3").innerHTML = passwordoutput;
-  // requires one lower case letter in the password field
-  if(passwordinput.search(/[a-z]/) < 0) {
+  passwordoutput = "";
+  if (passwordinput.search(/[a-z]/) < 0) {
     passwordoutput = "Enter at least 1 lower case letter.";
     error_flag = 1;
   }
-  else {
-    passwordoutput = "";
-  }
-  // requires one upper case letter in the password field
   document.getElementById("password_msg4").innerHTML = passwordoutput;
-  if(passwordinput.search(/[A-Z]/)< 0)  {  
+  passwordoutput = "";
+  if (passwordinput.search(/[A-Z]/) < 0) {
     passwordoutput = "Enter at least 1 upper case letter.";
     error_flag = 1;
   }
-  else {
-    passwordoutput = "";
-  }
   document.getElementById("password_msg5").innerHTML = passwordoutput;
-  if (password === uid) {
-  passwordoutput = "Password cannot be the same as User ID.";
-  error_flag = 1;
-  }
-  else {
-    passwordoutput = "";
-  }      
-  document.getElementById("password_msg6").innerHTML = passwordoutput;
 }
 
 // ensures both passwords fields match 
