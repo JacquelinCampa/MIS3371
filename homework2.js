@@ -2,9 +2,9 @@
 Author: Jacquelin Valdez Campa
 Program name: homework2.js
 Date created: 06/16/25
-Date last edited: 
-Version: 1.0
-Description: homework 2 JavaScript that validates form inputs, displays error messages, 
+Date last edited: 06/19/25
+Version: 2.0
+Description: Homework 2 JavaScript that validates form inputs, displays error messages, 
 formats fields, and enables submission only when all data is valid.
 */
 
@@ -374,16 +374,7 @@ function reviewForm() {
   document.getElementById("outputformdata").innerHTML = formoutput;
 }
 
-function showAlert() {
-    var alertBox = document.getElementById("alert-box");
-    var closeAlert = document.getElementById("close-alert");
-
-    alertBox.style.display = "block";
-    closeAlert.onclick = function() {
-        alertBox.style.display = "none";
-    };
-}
-
+//Validates all functions, shows an alert if there are any errors
 function validateInformation() {
   error_flag = "0";
   validateFirstName();
