@@ -259,7 +259,7 @@ function validateAddress2() {
 }
 
 // validates city field
-function checkcity() {
+function validateCity() {
   var city = document.getElementById("city").value.trim();
 
   if (city === "") {
