@@ -162,6 +162,7 @@ function validateUserID() {
 
 // Validates password requirements
 function validatePassword() {
+  let uid = document.getElementById("userid").value;
   var passwordoutput;
   var passwordinput = document.getElementById("password").value;
   console.log(passwordinput);
