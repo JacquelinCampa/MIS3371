@@ -211,6 +211,14 @@ function validatePassword() {
     passwordoutput = "";
   }
   document.getElementById("password_msg5").innerHTML = passwordoutput;
+  if (password === uid) {
+  passwordoutput = "Password cannot be the same as User ID.";
+  error_flag = 1;
+  }
+  else {
+    passwordoutput = "";
+  }      
+  document.getElementById("password_msg6").innerHTML = passwordoutput;
 }
 
 // ensures both passwords fields match 
