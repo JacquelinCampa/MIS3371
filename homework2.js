@@ -298,9 +298,6 @@ function validateZipCode() {
   }
 }
 
-//test
-
-
 // validates email address field
 function validateEmail() {
   var email = document.getElementById("email").value;
@@ -324,7 +321,7 @@ function validatePhone() {
   const phone = document.getElementById("phone");
   let digits = phone.value.replace(/\D/g, '');
 
-  if (digits === '') {
+  if (digits === "") {
     document.getElementById("phone_message").innerHTML = "Phone number cannot be blank.";
     error_flag = 1; 
   }
