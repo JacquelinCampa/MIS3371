@@ -4,7 +4,8 @@ Program name: homework2.js
 Date created: 06/16/25
 Date last edited: 
 Version: 1.0
-Description: homework 2 JavaScript to Redisplay/validate patient data from a form
+Description: homework 2 JavaScript that validates form inputs, displays error messages, 
+formats fields, and enables submission only when all data is valid.
 */
 
 // sets errors to 0
