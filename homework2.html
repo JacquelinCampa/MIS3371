@@ -145,10 +145,11 @@ Description: Parsing/validating patient data in a form.
                name="SSN" 
                minlength="9" 
                maxlength="11" 
-               placeholder="XXX-XX-XXXX" 
+               placeholder="XXX-XX-XXXX"
+               pattern="\d{9}"
                required
-               title="9 digits required."
-               onvalid="this.setCustomValidity('Required. SSN must have 9 digits.')"
+               title="SSN must be exactly 9 digits with no dashes."
+               onvalid="this.setCustomValidity('Required. SSN must have exactly 9 digits with no dashes.')"
                oninput="this.setCustomValidity('')"
                onblur="validateSSN()"
             >
@@ -620,7 +621,7 @@ Description: Parsing/validating patient data in a form.
                <input
                   type="button"
                   value="Validate Form"
-                  onclick="validateInformation()""
+                  onclick="validateInformation()"
                >
                   
                 <input
