@@ -303,18 +303,17 @@ function validateZipCode() {
 function validateEmail() {
   var email = document.getElementById("email").value;
   var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  var email_message = document.getElementById("email_message");
 
   if (email.trim() === "") {
-    email_message.innerHTML = "Email address cannot be blank.";
+    document.getElementById("email_message").innerHTML = "Email address cannot be blank.";
     error_flag = 1;
   }
   else if (!email.match(emailPattern)) {
-    email_message.innerHTML = "Invalid. Enter a valid email address.";
+    document.getElementById("email_message").innerHTML = "Invalid. Enter a valid email address.";
     error_flag = 1;
-  } 
+  }
   else {
-    email_message.innerHTML = "";
+    document.getElementById("email_message").innerHTML = "";
   }
 }
 
