@@ -298,6 +298,8 @@ function validateZipCode() {
   }
 }
 
+//test
+
 
 // validates email address field
 function validateEmail() {
