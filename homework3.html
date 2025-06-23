@@ -18,6 +18,11 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
     <!-- Load external CSS styles -->
        <link rel="stylesheet" href="homework3.css">
     </head>
+   <!-- welcome messages -->
+    <center>
+    <span id="welcomeNewUser"></span>
+    <span id="welcomeBack"></span>
+    </center>
     <!-- start of body  -->
     <body onload="setup()">
    <!-- image, title, and date -->
@@ -47,9 +52,19 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
    <center> 
    <table class="form">
     <tr class="form">
+   <!-- clinic google maps iframe -->
+   <div class="iframe">
+    <iframe 
+       class="clinicLocation" 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.097135294084!2d-95.7199747244268!3d29.89030162585757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640d7ce6e888c11%3A0x153280ddfe934c95!2sCypress%20Springs%20Family%20Care!5e0!3m2!1sen!2sus!4v1750711235728!5m2!1sen!2sus"
+       allowfullscreen=""
+       loading="lazy" 
+       referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+   </div>
         <th class="formth" colspan="4">Create Account<br><br></th>
     </tr>
-    <!-- first name -->
+   <!-- first name -->
     <tr class="form">
         <td align="right">
             <label for="firstName"><strong>First Name:</strong></label>
@@ -606,14 +621,28 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
         </td>
         <td>
             <textarea
-            id="notes"
-            name="notes"
-            rows="3"
-            cols="50"
-            title="Optional"
-            placeholder="(Optional) Enter any additional medical history or concerns here..."></textarea>
+               id="notes"
+               name="notes"
+               rows="3"
+               cols="50"
+               title="Optional"
+               placeholder="(Optional) Enter any additional medical history or concerns here..."></textarea>
         </td>
     </tr>
+    <!-- remember me checkbox -->
+    <tr>
+       <td class="rememberMeTD1">
+          <label for="remembeMe">Remember Me:</label>
+       </td>
+       <td>
+           <input
+              type="checkbox"
+              id="rememberMe"
+              name="rememberme"
+              checked
+           >
+       </td>
+   </tr>
     <!-- submit, reset, validate form, and review form buttons -->
     <tr>
        <td colspan="4"><br><br></td>
