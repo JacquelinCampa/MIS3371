@@ -1,0 +1,107 @@
+/*
+Name: Jacquelin Valdez Campa
+File: homework2.css
+Date Created: 06/16/2025
+Date Updated: 06/19/2025
+version: 2.0
+Purpose: style sheet for MIS 3371 hw2
+*/
+
+#logo {
+   width: 150px;
+   height: auto;
+}
+
+header {
+    width: 100%;
+    background-color:#99CCFF;
+    font-family: 'Times New Roman';
+    font-size: large;
+}
+
+body {
+    background-color: #CCE5FF;
+    font-family: 'Courier New';
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+footer {
+    position: flex;
+    bottom: 0;
+    width: 100%;
+    background-color:#99CCFF;
+    font-family: optima;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  background: #CCE5FF;
+  height: fit-content;
+  align-items: center;
+  padding: 5px;
+
+}
+
+hr {
+    border: none;
+    background-color: #99CCFF;
+    margin: 0; 
+}
+
+.formth {
+    font-family: 'Times New Roman';
+}
+
+main {
+  text-align: center;
+  font-family: Optima;
+}
+
+.thankyoufooter {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
+#copyrightclinicname {
+    font-weight: bold;
+}
+
+.error {
+  display: block;
+  color: black;
+  font-size: 0.90em;
+  font-family: cambria;
+  min-height: .50em;
+}
+
+tr.form td[id^="password_msg"] {
+  display: block;
+  color: black;
+  font-family: Cambria;
+  font-size: 0.90em;
+  min-height: .50em
+}
+
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+    font-family: Cambria;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: black;
+}
+
+td.output {
+    width: 500px;
+    background-color: black;
+    font-family: Cambria;
+    padding: 10px;
+    border-spacing: 2px;
+}
