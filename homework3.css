@@ -92,18 +92,6 @@ tr.form td[id^="password_msg"] {
   align-items: flex-start;
 }
 
-#SSN_counter {
-  margin-top: 4px;
-  font-size: 0.9em;
-  color: #333;
-}
-
-#SSN_message {
-  font-size: 0.9em;
-  color: red;
-}
-
-
 table.output,
 tr.output,
 td.output {
