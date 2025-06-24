@@ -68,10 +68,6 @@ main {
   width: 100%;
 }
 
-#copyrightclinicname {
-    font-weight: bold;
-}
-
 .error {
   display: block;
   color: black;
