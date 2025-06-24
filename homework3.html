@@ -361,13 +361,13 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
                 name="city" 
                 required
                 onblur="validateCity()"
-                title="City is required."
-                oninvalid="this.setCustomValidity('City is Required.')"
+                title="City cannot be blank. 2-30 characters required."
+                oninvalid="this.setCustomValidity('City cannot be blank. 2-30 characters required.')"
                 oninput="this.setCustomValidity('')"
                 placeholder="(req'd)"
             >
-            <select id="state" name="state" required title="State is required.">
-                <option value=""></option>
+            <select id="state" name="state" required title="State is required." required onchange="validateState()">
+                <option value="" disabled selected hidden> Select a state: </option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -436,8 +436,7 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
                 onblur="validateZipCode()"
                 placeholder="00000"
             >
-            <span id="city_message" class="error"></span>
-            <span id="state_message" class="error"></span>
+            <span id="city_message" class="error"></span> <span id="state_message" class="error"></span>
             <span id="zipcode_message" class="error"></span>
         </td>
     </tr>
@@ -638,17 +637,18 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
     <!-- remember me checkbox -->
     <tr>
        <td class="rememberMeTD1">
-          <label for="remembeMe">Remember Me:</label>
-       </td>
-       <td>
-           <input
-              type="checkbox"
-              id="rememberMe"
-              name="rememberme"
-              checked
-           >
-       </td>
-   </tr>
+         <td align="right">
+            <label for="remembeMe">Remember Me:</label>
+         </td>
+         <td>
+            <input
+               type="checkbox"
+               id="rememberMe"
+               name="rememberme"
+               checked
+            >
+         </td>
+    </tr>
     <!-- submit, reset, validate form, and review form buttons -->
     <tr>
        <td colspan="4"><br><br></td>
