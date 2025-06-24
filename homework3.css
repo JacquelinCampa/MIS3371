@@ -106,7 +106,3 @@ td.output {
     border-spacing: 2px;
 }
 
-.rememberMeContainer {
-  margin: 0 auto;  /* centers the table horizontally */
-  text-align: left; /* optional, to keep label alignment */
-}
