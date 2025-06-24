@@ -262,7 +262,7 @@ function validateCity() {
   var city = document.getElementById("city").value.trim();
 
   if (city === "") {
-    document.getElementById("city_message").innerHTML = "City name cannot be empty.";
+    document.getElementById("city_message").innerHTML = "City name cannot be blank.";
     error_flag = 1;
   } else if (city.length < 2 || city.length > 30) {
     document.getElementById("city_message").innerHTML = "City name must be between 2 and 30 characters.";
