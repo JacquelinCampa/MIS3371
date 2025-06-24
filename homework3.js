@@ -362,7 +362,7 @@ function validateNotes() {
   const max = 300;
 
   if (notes && notes.length > max) {
-    document.getElementById("notes_message").innerHTML = "Invalid. Notes cannot exceed 300 characters.";
+    document.getElementById("notes_message").innerHTML = "Invalid. Additional notes cannot exceed 300 characters.";
     error_flag = 1;
   } else {
     document.getElementById("notes_message").innerHTML = "";
