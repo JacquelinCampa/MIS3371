@@ -687,27 +687,44 @@ Description: MIS 3371 Homework 3. Parsing/validating data in a form.
 <hr>
 <!-- footer -->
 <div class="footer">
-  <footer>
-    <div style="display: flex; align-items: flex-start; gap: 0;">
-      <!-- Clinic location -->
-      <div style="margin: 0; padding: 0;">
+  <footer style="padding: 20px; font-family: sans-serif;">
+    
+    <!-- Location with iframe underneath -->
+    <div style="text-align: left; margin-bottom: 20px;">
+      <p style="margin: 0;">
+        <strong>&#169; Cypress Springs Medical Center</strong><br>
+        P.O. Box 12345<br>
+        Houston, TX 77001
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27719.774429607176!2d-95.3417728!3d29.720576!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640d7ce6e888c11%3A0x153280ddfe934c95!2sCypress%20Springs%20Family%20Care!5e0!3m2!1sen!2sus!4v1750796909526!5m2!1sen!2sus"
+        width="250"
+        height="120"
+        style="border: 0; margin-top: 10px; display: block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- Contact + Social side by side -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      
+      <!-- Contact Us -->
+      <div>
+        <a href="mailto:jfvaldezcampa@uh.edu">Contact Us!</a>
+      </div>
+
+      <!-- Social Media Links -->
+      <div style="text-align: right;">
         <p style="margin: 0;">
-          <strong>&#169; Cypress Springs Medical Center</strong><br>
-          P.O. Box 12345<br>
-          Houston, TX 77001
+          Instagram:<br>
+          <a href="https://www.instagram.com/clinicsites/?hl=en" target="_blank">@CypressSpringsMC</a><br><br>
+          Facebook:<br>
+          <a href="https://www.facebook.com/texasmedcenter/" target="_blank">Cypress Springs MC</a>
         </p>
       </div>
 
-      <!-- Google Maps iframe -->
-      <div style="margin: 0; padding: 0;">
-        <iframe
-          class="clinicLocation"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27719.774429607176!2d-95.3417728!3d29.720576!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640d7ce6e888c11%3A0x153280ddfe934c95!2sCypress%20Springs%20Family%20Care!5e0!3m2!1sen!2sus!4v1750796909526!5m2!1sen!2sus"
-          width="300"
-          height="150"
-          style="border: 0; display: block;">
-        </iframe>
-      </div>
     </div>
   </footer>
 </div>
