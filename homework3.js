@@ -275,6 +275,20 @@ function validateCity() {
   }
 }
 
+//validates state field 
+function validateState() {
+  const state = document.getElementById("state").value;
+
+  if (state === "") {
+    document.getElementById("state_message").innerHTML = "State field must be selected.";
+    error_flag = 1;
+    return;
+  } 
+  else {
+    document.getElementById("state_message").innerHTML = "";
+  }
+}
+
 // validates zip code field
 function validateZipCode() {
   var zipCodeInput = document.getElementById("zipcode");
