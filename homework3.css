@@ -108,3 +108,8 @@ td.output {
     border-spacing: 2px;
 }
 
+#iframe {
+   width: 400;
+   height: 300;
+   border: 0;
+}
