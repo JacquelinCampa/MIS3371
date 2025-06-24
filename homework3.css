@@ -105,3 +105,10 @@ td.output {
     padding: 10px;
     border-spacing: 2px;
 }
+
+.rememberMeTD {
+  text-align: center;
+  padding-top: 10px; 
+  padding-bottom: 10px;
+}
+
