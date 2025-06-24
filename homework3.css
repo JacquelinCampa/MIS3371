@@ -86,17 +86,6 @@ tr.form td[id^="password_msg"] {
   min-height: .50em
 }
 
-.ssn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-#notes {
-  padding-top: 12px; 
-  resize: vertical; 
-}
-
 table.output,
 tr.output,
 td.output {
