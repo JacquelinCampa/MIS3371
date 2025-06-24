@@ -12,14 +12,16 @@ Purpose: style sheet for MIS 3371 hw3
    height: auto;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color:#99CCFF;
-    font-family: 'Times New Roman';
-    font-size: large;
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #99CCFF;  
+  z-index: 1000;           
+  font-family: 'Times New Roman';
+  font-size: large;
 }
+
 
 body {
     background-color: #CCE5FF;
