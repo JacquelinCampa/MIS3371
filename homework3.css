@@ -29,10 +29,41 @@ body {
     margin: 0;
 }
 
-footer {
-    background-color:#99CCFF;
-    font-family: optima;
+.footer {
+  background-color:#99CCFF;
+  font-family: optima;
+  padding: 5px;
 }
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerClinicLocation p {
+  margin: 0;
+}
+
+.footerClinicLocation iframe {
+  border: 0;
+  margin-top: 10px;
+  display: block;
+}
+
+.footerMediaLinks {
+  text-align: right;
+}
+
+.footerMedialinks p {
+  margin: 0;
+}
+
+.footerContactInfo {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 
 footer a {
   text-decoration: none;
