@@ -49,7 +49,6 @@ function validateFirstName() {
   }
 }
 
-
 // Validates middle name field 
 function validateMiddleInit() {
   var x = document.getElementById("middleinit").value;
