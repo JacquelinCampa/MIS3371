@@ -355,21 +355,6 @@ function validatePhone() {
   document.getElementById("phone_message").innerHTML = ""; 
 }
 
-// validates notes field
-function validateNotes() {
-  const notes = document.getElementById("notes").value;
-  const max = 300;
-
-  if (notes.length > max) {
-    document.getElementById("notes_message").innerHTML = "Notes cannot exceed 300 characters.";
-    error_flag = 1;
-    return;
-  } 
-  else {
-    document.getElementById("notes_message").innerHTML = "";
-  }
-}
-
 // review form data
 function reviewForm() {
   const form = document.getElementById("signup");
