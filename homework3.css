@@ -105,3 +105,10 @@ td.output {
     padding: 10px;
     border-spacing: 2px;
 }
+
+.rememberMeContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin-top: 20px;        
+}
