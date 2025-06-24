@@ -400,6 +400,7 @@ function validateInformation() {
   validateAddress1();
   validateAddress2();
   validateCity();
+  validateState();
   validateZipCode();
   validateEmail();
   validatePhone();
