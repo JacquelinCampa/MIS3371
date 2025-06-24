@@ -420,6 +420,7 @@ function validateInformation() {
   validateZipCode();
   validateEmail();
   validatePhone();
+  validateNotes();
   console.log("Error flag: "+error_flag);
     if (error_flag == "1") {
       alert("Please fix the indicated errors!");
