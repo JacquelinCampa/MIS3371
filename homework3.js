@@ -110,7 +110,10 @@ function validateDateOfBirth() {
 // Validates SSN
 function validateSSN() {
   const ssn = document.getElementById("SSN").value;
+  const digitCount = ssn.replace(/\D/g, "").length;
   const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
+
+  document.getElementById("SSN_counter").innerText = `Digits typed: ${digitCount} / 9`;
 
   if (!ssnR.test(ssn)) {
     document.getElementById("SSN_message").innerHTML = 
