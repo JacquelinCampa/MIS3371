@@ -266,7 +266,7 @@ function validateCity() {
     document.getElementById("city_message").innerHTML = "City name must be between 2 and 30 characters.";
     error_flag = 1;
   } else if (!city.match(/^[a-zA-Z\s'-]+$/)) {
-    document.getElementById("city_message").innerHTML = "Invalid characters in City name.";
+    document.getElementById("city_message").innerHTML = "Invalid. letters only in City name.";
     error_flag = 1;
   } else {
     document.getElementById("city_message").innerHTML = "";
