@@ -361,12 +361,10 @@ function validateNotes() {
   const notes = document.getElementById("notes").value;
   const max = 300;
 
-  if (notes.length > max) {
+  if (notes && notes.length > max) {
     document.getElementById("notes_message").innerHTML = "Notes cannot exceed 300 characters.";
     error_flag = 1;
-    return;
-  } 
-  else {
+  } else {
     document.getElementById("notes_message").innerHTML = "";
   }
 }
