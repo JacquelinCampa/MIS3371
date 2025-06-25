@@ -369,6 +369,15 @@ function validateNotes() {
   }
 }
 
+const inputs = [
+  { id: "firstname", cookieName: "firstName" },
+  { id: "middleinit", cookieName: "middleInitial" },
+  { id: "lastname", cookieName: "lastName" },
+  { id: "dateofbirth", cookieName: "dob" },
+  { id: "SSN", cookieName: "ssn" },
+  { id: "userid", cookieName: "userId" }
+];
+
 // creates a browser cookie with name, value, and expiration in days
 function setCookie(name, cvalue, expiryDays) {
     var day = new Date();
@@ -395,13 +404,11 @@ function getCookie(name) {
 inputs.forEach(function (input) {
     var inputElement = document.getElementById(input.id);
 
-    // Prefill input fields
     var cookieValue = getCookie(input.cookieName);
     if (cookieValue !== "") {
         inputElement.value = cookieValue;
     }
 
-    // Set a cookie when the input field changes
     inputElement.addEventListener("input", function () {
         setCookie(input.cookieName, inputElement.value, 30);
     });
@@ -446,7 +453,7 @@ function deleteAllCookies() {
     document.cookie.split(";").forEach(function (cookie) {
         let eqPos = cookie.indexOf("=");
         let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 June 2025 00:00:00 UTC;path=/;";
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
     });
 }
 
