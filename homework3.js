@@ -369,13 +369,25 @@ function validateNotes() {
   }
 }
 
+// Inputs to save/load via cookies
 const inputs = [
-  { id: "firstname", cookieName: "firstName" },
-  { id: "middleinit", cookieName: "middleInitial" },
-  { id: "lastname", cookieName: "lastName" },
-  { id: "dateofbirth", cookieName: "dob" },
-  { id: "SSN", cookieName: "ssn" },
-  { id: "userid", cookieName: "userId" }
+    { id: "firstname", cookieName: "firstName" },
+    { id: "middleinit", cookieName: "middleInit" },
+    { id: "lastname", cookieName: "lastName" },
+    { id: "dateofbirth", cookieName: "dob" },
+    { id: "SSN", cookieName: "ssn" },
+    { id: "userid", cookieName: "userId" },
+    { id: "password", cookieName: "password" },
+    { id: "conpassword", cookieName: "conPassword" },
+    { id: "address1", cookieName: "address1" },
+    { id: "address2", cookieName: "address2" },
+    { id: "city", cookieName: "city" },
+    { id: "state", cookieName: "state" },
+    { id: "zipcode", cookieName: "zipcode" },
+    { id: "email", cookieName: "email" },
+    { id: "phone", cookieName: "phone" },
+    { id: "comfortrange", cookieName: "comfort" },
+    { id: "notes", cookieName: "notes" }
 ];
 
 // creates a browser cookie with name, value, and expiration in days
