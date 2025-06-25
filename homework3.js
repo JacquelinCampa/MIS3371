@@ -458,6 +458,7 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteAllCookies();
     }
 });
+
 // review form data
 function reviewForm() {
   const form = document.getElementById("signup");
