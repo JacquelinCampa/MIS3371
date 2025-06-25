@@ -423,7 +423,7 @@ if (firstName !== "") {
 }
 
 // saves or deletes cookies based on the "Remember Me" checkbox status
-document.getElementById("remember-me").addEventListener("change", function () {
+document.getElementById("rememberMe").addEventListener("change", function () {
     const rememberMe = this.checked;
 
     if (!rememberMe) {
@@ -452,13 +452,12 @@ function deleteAllCookies() {
 
 // deletes all cookies on page load if "Remember Me" is not checked
 document.addEventListener("DOMContentLoaded", function () {
-    const rememberMe = document.getElementById("remember-me").checked;
+    const rememberMe = document.getElementById("rememberMe").checked;
 
     if (!rememberMe) {
         deleteAllCookies();
     }
 });
-
 // review form data
 function reviewForm() {
   const form = document.getElementById("signup");
