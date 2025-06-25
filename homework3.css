@@ -12,7 +12,7 @@ Purpose: style sheet for MIS 3371 hw3
    height: auto;
 }
 
-.header {
+header {
   position: sticky;
   top: 0;
   width: 100%;
@@ -91,6 +91,8 @@ main {
 }
 
 .thankyoufooter {
+  background-color:#99CCFF;
+  font-family: optima;
   position: absolute;
   bottom: 0%;
   width: 100%;
