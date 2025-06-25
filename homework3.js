@@ -369,6 +369,96 @@ function validateNotes() {
   }
 }
 
+// creates a browser cookie with name, value, and expiration in days
+function setCookie(name, cvalue, expiryDays) {
+    var day = new Date();
+    day.setTime(day.getTime() + (expiryDays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + day.toUTCString();
+    document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// gets the value of a cookie by its name
+function getCookie(name) {
+    var cookieName = name + "=";
+    var cookies = document.cookie.split(';');
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName) == 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+// pre-fills inputs with cookie values and saves new input changes as cookies
+inputs.forEach(function (input) {
+    var inputElement = document.getElementById(input.id);
+
+    // Prefill input fields
+    var cookieValue = getCookie(input.cookieName);
+    if (cookieValue !== "") {
+        inputElement.value = cookieValue;
+    }
+
+    // Set a cookie when the input field changes
+    inputElement.addEventListener("input", function () {
+        setCookie(input.cookieName, inputElement.value, 30);
+    });
+});
+
+// welcomes returning users with their name stored in cookies
+var firstName = getCookie("firstName");
+if (firstName !== "") {
+    document.getElementById("welcomeBack").innerHTML = "Welcome back, " + firstName + "!<br>";
+    document.getElementById("welcomeNewUser").innerHTML =
+        "<a href='#' id='new-user'>Not " + firstName + "? Click here to start a new form.</a>";
+
+    document.getElementById("new-user").addEventListener("click", function () {
+        inputs.forEach(function (input) {
+            setCookie(input.cookieName, "", -1);
+        });
+        location.reload();
+    });
+}
+
+// saves or deletes cookies based on the "Remember Me" checkbox status
+document.getElementById("remember-me").addEventListener("change", function () {
+    const rememberMe = this.checked;
+
+    if (!rememberMe) {
+        deleteAllCookies();
+        console.log("All cookies deleted because 'Remember Me' is unchecked.");
+    } 
+    else {
+        inputs.forEach(function (input) {
+            const inputElement = document.getElementById(input.id);
+            if (inputElement.value.trim() !== "") {
+                setCookie(input.cookieName, inputElement.value, 30);
+            }
+    });
+        console.log("Cookies saved because 'Remember Me' is checked.");
+    }
+});
+
+// deletes all cookies by setting their expiration date in the past
+function deleteAllCookies() {
+    document.cookie.split(";").forEach(function (cookie) {
+        let eqPos = cookie.indexOf("=");
+        let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 June 2025 00:00:00 UTC;path=/;";
+    });
+}
+
+// deletes all cookies on page load if "Remember Me" is not checked
+document.addEventListener("DOMContentLoaded", function () {
+    const rememberMe = document.getElementById("remember-me").checked;
+
+    if (!rememberMe) {
+        deleteAllCookies();
+    }
+});
+
 // review form data
 function reviewForm() {
   const form = document.getElementById("signup");
