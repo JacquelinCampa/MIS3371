@@ -313,17 +313,20 @@ function validateZipCode() {
 
 // validates email address field
 function validateEmail() {
-  var email = document.getElementById("email").value;
+  var emailField = document.getElementById("email");
+  var email = emailField.value.toLowerCase(); 
+  emailField.value = email; 
+
   var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   if (email.trim() === "") {
     document.getElementById("email_message").innerHTML = "Email address cannot be blank.";
     error_flag = 1;
-  }
+  } 
   else if (!email.match(emailPattern)) {
     document.getElementById("email_message").innerHTML = "Invalid. Enter a valid email address.";
     error_flag = 1;
-  }
+  } 
   else {
     document.getElementById("email_message").innerHTML = "";
   }
