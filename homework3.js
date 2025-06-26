@@ -2,10 +2,10 @@
 Author: Jacquelin Valdez Campa
 Program name: homework3.js
 Date created: 06/23/25
-Date last edited: 06/00/25
+Date last edited: 06/26/25
 Version: 3.0
 Description: Homework 3 JavaScript that validates form inputs, displays error messages, 
-formats fields, and enables submission only when all data is valid.
+adds cookies, and enables submission only when all data is valid.
 */
 
 // sets errors to 0
