@@ -34,7 +34,7 @@ slider.oninput = function() {
 // Validates first name field
 function validateFirstName() {
   x = document.getElementById("firstname").value;
-  if( x.length<1) { 
+  if( x.length<1 || x.length > 30) { 
     document.getElementById("firstname_message").innerHTML = "Invalid. First name must be 1-30 characters.";  
     error_flag = 1;
   }
@@ -58,7 +58,7 @@ function validateMiddleInit() {
       middleinit_message.innerHTML = "";
     }
     else  {
-      middleinit_message.innerHTML = "Invalid. Only letters allowed.";
+      middleinit_message.innerHTML = "Invalid. Only one letter allowed.";
       error_flag = 1;
     }
   }
@@ -67,7 +67,7 @@ function validateMiddleInit() {
 // Validates last name field
 function validateLastName () {
   x = document.getElementById("lastname").value;
-  if( x.length<1) { 
+  if( x.length<1 || x.length > 30) { 
     document.getElementById("lastname_message").innerHTML = "Invalid. Last name must be 1-30 characters.";
     error_flag = 1;  
     }
@@ -84,27 +84,32 @@ function validateLastName () {
 
 // Validates date of birth field 
 function validateDateOfBirth() {
-  DOB = document.getElementById("dateofbirth");
-  let date = new Date(DOB.value);
-  let maxDate = new Date().setFullYear(new Date().getFullYear() - 120);
+  let DOB = document.getElementById("dateofbirth");
+  let date = new Date(DOB.value.trim());
+  let maxDate = new Date();
+  maxDate.setFullYear(new Date().getFullYear() - 120);
   let today = new Date();
 
-  if (date > today) {
-    document.getElementById("dateofbirth_message").innerHTML = 
-    "Date cannot be in the future.";
-    dob.value = "";
+  if (DOB.value.trim() === "") {
+    document.getElementById("dateofbirth_message").innerHTML = "DOB cannot be blank.";
+    DOB.value = "";
     error_flag = 1;
-  } 
-  else if (date < new Date(maxDate)) {
-    document.getElementById("dateofbirth_message").innerHTML = 
-    "Date cannot be more than 120 years ago.";
-    dob.value = "";
+  }
+  else if (date > today) {
+    document.getElementById("dateofbirth_message").innerHTML = "Date cannot be in the future.";
+    DOB.value = "";
     error_flag = 1;
-  } 
+  }
+  else if (date < maxDate) {
+    document.getElementById("dateofbirth_message").innerHTML = "Date cannot be more than 120 years ago.";
+    DOB.value = "";
+    error_flag = 1;
+  }
   else {
     document.getElementById("dateofbirth_message").innerHTML = "";
   }
 }
+
 
 // Validates SSN
 function validateSSN() {
@@ -116,7 +121,7 @@ function validateSSN() {
 
   if (!ssnR.test(ssn)) {
     document.getElementById("SSN_message").innerHTML = 
-    "Invalid. SSN must be 9 digits";
+    "Invalid. SSN must be 9 digits only.";
     error_flag = 1;
   } 
   else {
@@ -152,9 +157,9 @@ function validateUserID() {
     "User ID must be at least 5 characters.";
     error_flag = 1;
   } 
-  else if (uid.length > 30) {
+  else if (uid.length > 20) {
     document.getElementById("userid_message").innerHTML = 
-    "User ID cannot exceed 30 characters.";
+    "User ID cannot exceed 20 characters.";
     error_flag = 1;
   }
   else {
