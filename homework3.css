@@ -32,6 +32,10 @@ body {
 }
 
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%
   background-color:#99CCFF;
   font-family: optima;
   padding: 5px;
@@ -91,11 +95,12 @@ main {
 }
 
 .thankyoufooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%
   background-color:#99CCFF;
   font-family: optima;
-  position: absolute;
-  bottom: 0%;
-  width: 100%;
 }
 
 .error {
